@@ -13,12 +13,12 @@ import {HashRouter as Router, Route} from "react-router-dom";
 class App extends Component {
   render() {
     return (
+      <Router>
       <div className="App">
         <header className="App-header">
           <h1 className="App-title">Dinner Diary</h1>
           <h4><i>365 Days of Yum</i></h4>
         </header>
-        <Router>
           {/* client-side routers */}
           <Route exact path="/" component={HomeView}/>
           <Route path="/taste" component={TasteView}/>
@@ -28,9 +28,9 @@ class App extends Component {
           <Route path="/comments" component={CommentsView}/>
           <Route path="/submission" component={SubmissionCompleteView}/>
           <Route path="/results" component={ResultsView}/>
-        </Router>
         <br/>
       </div>
+      </Router>
     );
   }
 }
