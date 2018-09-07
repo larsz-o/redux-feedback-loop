@@ -16,17 +16,15 @@ const blankFeedback = {
     flagged: false, 
     date: ''
 };
-const blankMeal = {
-    name: '', 
-    meal: ''
-}; 
-const dinnerLog = (state = blankMeal, action) => {
+const nameLog = (state = '', action) => {
+    if(action.type === 'ADD_NAME'){
+        return action.payload;
+    } return state;
+} // stores current user's name 
+
+const dinnerLog = (state = '', action) => {
     if(action.type === 'ADD_MEAL'){
-        const newDinner = {
-            name: action.payload.name,
-            meal: action.payload.meal
-        }
-        return newDinner; 
+         return action.payload; 
     }
     return state; 
 } // stores the current dinner entry 
@@ -37,7 +35,8 @@ const feedback = (state = blankFeedback, action ) => {
 const storeInstance = createStore (
     combineReducers({
         feedback, 
-        dinnerLog
+        dinnerLog, 
+        nameLog
     }), 
     applyMiddleware(logger),
 );

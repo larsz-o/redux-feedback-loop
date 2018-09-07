@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import HomeView from '../HomeView/HomeView.js';
+import MealView from '../MealView/MealView.js'; 
 import TasteView from '../TasteView/TasteView.js';
 import TextureView from '../TextureView/TextureView.js';
 import CreativityView from '../CreativityView/CreativityView.js'; 
@@ -21,6 +22,7 @@ class App extends Component {
         </header>
           {/* client-side routers */}
           <Route exact path="/" component={HomeView}/>
+          <Route path="/food" component={MealView}/>
           <Route path="/taste" component={TasteView}/>
           <Route path="/texture" component={TextureView}/>
           <Route path="/creativity" component={CreativityView}/>

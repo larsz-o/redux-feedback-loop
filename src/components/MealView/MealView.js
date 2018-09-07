@@ -1,36 +1,37 @@
 import React, {Component} from 'react'; 
 import {connect} from 'react-redux'; 
 
-class HomeView extends Component {
+class MealView extends Component {
     constructor(){
         super(); 
     this.state = {
-            name: '', 
+            meal: '', 
         }
     }
-    
-    handleNameChange = (event) => {
+
+    handleMealChange = (event) => {
         console.log(event.target.value); 
         this.setState({
-            name: event.target.value,
+            meal: event.target.value,
         });
     } // end handleMealChange
-
+    
     submitMeal = (event) => {
         event.preventDefault();
         console.log('in submitMeal');
-        const action = {type: 'ADD_NAME', payload: this.state};
+        const action = {type: 'ADD_MEAL', payload: this.state};
         console.log(this.state); 
         this.props.dispatch(action); 
-        this.props.history.push('/food'); 
+        this.props.history.push('/taste'); 
     } // end submitMeal 
+
     render(){
         console.log(this.state); 
         return(
             <div>
-                <h2>Hello! What's your name?</h2>
+                <h2>Hi, {this.props.reduxStore.nameLog}. What did you eat for dinner?</h2>
                 <form onSubmit={this.submitMeal}>
-                    <label>Name: </label><input onChange={this.handleNameChange}/>
+                    <label>Name: </label><input onChange={this.handleMealChange}/>
                     <button >Submit</button>
                 </form>
             
@@ -38,4 +39,4 @@ class HomeView extends Component {
         );
     }
 }
-export default connect()(HomeView); 
+export default connect()(MealView); 
