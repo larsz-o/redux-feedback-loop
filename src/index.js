@@ -7,7 +7,7 @@ import {createStore, combineReducers, applyMiddleware} from 'redux';
 import {Provider} from 'react-redux'; 
 import logger from 'redux-logger'; 
 
-const newFeedback = {
+const blankFeedback = {
     taste: 0, 
     texture: 0,
     creativity: 0, 
@@ -16,14 +16,22 @@ const newFeedback = {
     flagged: false, 
     date: ''
 };
-const dinnerLog = (state = '', action) => {
+const blankMeal = {
+    name: '', 
+    meal: ''
+}; 
+const dinnerLog = (state = blankMeal, action) => {
     if(action.type === 'ADD_MEAL'){
-        return action.payload; 
+        const newDinner = {
+            name: action.payload.name,
+            meal: action.payload.meal
+        }
+        return newDinner; 
     }
     return state; 
 } // stores the current dinner entry 
 
-const feedback = (state = newFeedback, action ) => {
+const feedback = (state = blankFeedback, action ) => {
     return state; 
 }
 const storeInstance = createStore (
@@ -31,7 +39,7 @@ const storeInstance = createStore (
         feedback, 
         dinnerLog
     }), 
-    applyMiddleware(logger)
+    applyMiddleware(logger),
 );
 
 ReactDOM.render(<Provider store={storeInstance}><App /></Provider>, document.getElementById('root'));
