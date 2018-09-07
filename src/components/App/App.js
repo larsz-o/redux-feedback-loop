@@ -12,6 +12,17 @@ class App extends Component {
           <h1 className="App-title">Dinner Diary</h1>
           <h4><i>365 Days of Yum</i></h4>
         </header>
+        <Router>
+          {/* client-side routers */}
+          <Route exact path="/" component={HomeView}/>
+          <Route path="/taste" component={TasteView}/>
+          <Route path="/texture" component={TextureView}/>
+          <Route path="/creativity" component={CreativityView}/>
+          <Route path="/nutrition" component={NutritionView}/>
+          <Route path="/comments" component={CommentsView}/>
+          <Route path="/submission" component={SubmissionView}/>
+          <Route path="/results" component={ResultsView}/>
+        </Router>
         <br/>
       </div>
     );
