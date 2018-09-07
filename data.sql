@@ -1,8 +1,11 @@
--- Database should be prime_feedback
+-- Database should be dinner_diary
 CREATE DATABASE "dinner_diary";
-
--- Switch to "prime_feedback" before making:
--- Table to store the feedback
+-- Table to store names of meals 
+CREATE TABLE "dinners" (
+  "id" serial primary key,
+  "meal" varchar(250) not null
+);
+-- Table to store feedback 
 CREATE TABLE "feedback" (
   "id" serial primary key,
   "taste" INT not null,
@@ -11,9 +14,13 @@ CREATE TABLE "feedback" (
   "nutrition" INT not null,
   "comments" text,
   "flagged" boolean default false,
-  "date" date not null default CURRENT_DATE
+  "date" date not null default CURRENT_DATE, 
+  "meal_id" int FOREIGN KEY REFERENCES "dinners"."id"
 ); 
-
+-- Sample meal entry
+INSERT INTO "dinners" ("meal")
+VALUES ('butternut squash soup with salad');
 -- Sample feedback item
 INSERT INTO "feedback" ("taste", "texture", "creativity", "nutrition", "comments")
-VALUES (4, 4, 5, 3, 'Doing Great!');
+VALUES (4, 4, 5, 3, 'I loved this meal!');
+
