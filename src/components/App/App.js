@@ -1,7 +1,13 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 import './App.css';
-//import all of the views here too. 
+import HomeView from '../HomeView/HomeView.js';
+import TasteView from '../TasteView/TasteView.js';
+import TextureView from '../TextureView/TextureView.js';
+import CreativityView from '../CreativityView/CreativityView.js'; 
+import NutritionView from '../NutritionView/NutritionView.js';
+import CommentsView from '../CommentsView/CommentsView.js'; 
+import SubmissionCompleteView from '../SubmissionCompleteView/SubmissionCompleteView';
+import ResultsView from '../ResultsView/ResultsView.js'; 
 import {HashRouter as Router, Route} from "react-router-dom";
 
 class App extends Component {
@@ -20,7 +26,7 @@ class App extends Component {
           <Route path="/creativity" component={CreativityView}/>
           <Route path="/nutrition" component={NutritionView}/>
           <Route path="/comments" component={CommentsView}/>
-          <Route path="/submission" component={SubmissionView}/>
+          <Route path="/submission" component={SubmissionCompleteView}/>
           <Route path="/results" component={ResultsView}/>
         </Router>
         <br/>
@@ -28,5 +34,4 @@ class App extends Component {
     );
   }
 }
-
 export default App;
