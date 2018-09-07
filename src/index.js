@@ -28,7 +28,8 @@ const storeInstance = createStore (
     combineReducers({
         dinnerLog,
         feedback
-    })
+    }), 
+    applyMiddleware(logger)
 );
 
 ReactDOM.render(<Provider store={storeInstance}><App /></Provider>, document.getElementById('root'));
