@@ -1,5 +1,6 @@
 import React, {Component} from 'react'; 
 import {connect} from 'react-redux'; 
+import {Typography, Button} from '@material-ui/core'; 
 
 class MealView extends Component {
     constructor(){
@@ -29,10 +30,11 @@ class MealView extends Component {
         console.log(this.state); 
         return(
             <div>
-                <h2>Hi, {this.props.reduxStore.feedback.name}! What did you eat for dinner?</h2>
-                <form onSubmit={this.submitMeal}>
+                <Typography variant='display1' align='center' gutterBottom>Hi, {this.props.reduxStore.feedback.name}! 
+                What did you eat for dinner?</Typography>
+                <form >
                     <label>Describe your meal: </label><input onChange={this.handleMealChange}/>
-                    <button >Submit</button>
+                    <Button variant="contained" color="primary" onClick={this.submitMeal}>Submit</Button>
                 </form>
             
             </div>
