@@ -5,9 +5,9 @@ const pool = require('../modules/pool.js');
 // Feedback POST route 
 router.post('/', (req, res) => {
     const feedback = req.body;
-    const query = `INSERT INTO "feedback" ("taste", "texture", "creativity", "nutrition", "comments", "meal") 
-    VALUES ($1, $2, $3, $4, $5, $6);`;
-    pool.query(query, [feedback.taste, feedback.texture, feedback.creativity, feedback.nutrition, feedback.comments, feedback.meal]).then((response) => {
+    const query = `INSERT INTO "feedback" ("taste", "texture", "creativity", "nutrition", "comments", "meal", "overall_rating") 
+    VALUES ($1, $2, $3, $4, $5, $6, $7);`;
+    pool.query(query, [feedback.taste, feedback.texture, feedback.creativity, feedback.nutrition, feedback.comments, feedback.meal, feedback.overall_rating]).then((response) => {
         res.sendStatus(201);
     }).catch((error) => {
         console.log('Error posting feedback', error);

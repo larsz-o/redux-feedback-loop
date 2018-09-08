@@ -12,26 +12,10 @@ getCurrentRatingData = () => {
         const ratings = response.data;
         const action = {type: 'SET_HISTORY', payload: ratings}; 
         this.props.dispatch(action); 
-        this.getTotalsData();
     }).then((error) => {
         console.log('Error getting current ratings data', error);
     })
-} // gets the latest ratings data, dispatches that to the redux store, and calls getTotalsData which calculates each
-// meal's ratings
-getTotalsData = () => {
-    console.log('in getTotalsData');
-    axios({
-            method: 'GET', 
-            url: '/feedback/totals'
-        }).then((response) => {
-            const totals = response.data;
-            console.log(totals); 
-            const action = {type: 'SET_RATING', payload: totals}; 
-            this.props.dispatch(action); 
-        }).then((error) => {
-            console.log('Error getting current totals data', error);
-        })
-}
+} // gets the latest ratings data, dispatches that to the redux store
 componentDidMount(){
    this.getCurrentRatingData();
 }
@@ -48,7 +32,7 @@ render(){
                     <td>{dinner.creativity}</td>
                     <td>{dinner.nutrition}</td>
                     <td>{dinner.comments}</td>
-                    <td>{dinner.total}</td>
+                    <td>{dinner.overall_rating}</td>
                     {/*  need to calculate with SQL query */}
                     <td>Delete</td>
                     {/* - fill in with icon that clicks to delete the entry in the database then re-runs redux store dispatch */}

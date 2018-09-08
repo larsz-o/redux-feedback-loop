@@ -22,7 +22,7 @@ class NutritionView extends Component {
     render(){
         return(
             <div>
-            <h2>How <span className="emphasis-word">nutritious </span>was your meal of {this.props.reduxStore.dinnerLog.meal}?</h2>
+            <h2>How <span className="emphasis-word">nutritious </span>was your meal of {this.props.reduxStore.feedback.meal}?</h2>
                 <form>
                     <label>Terrible</label> <input onChange={this.handleRangeChange} className="slider" type="range" min="0" max="10"/><label> Amazing</label>
                 </form> 

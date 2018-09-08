@@ -11,6 +11,7 @@ import SubmissionCompleteView from '../SubmissionCompleteView/SubmissionComplete
 import ResultsView from '../ResultsView/ResultsView.js'; 
 import {HashRouter as Router, Route} from "react-router-dom";
 
+
 class App extends Component {
   render() {
     return (

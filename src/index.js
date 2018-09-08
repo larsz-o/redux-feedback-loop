@@ -7,7 +7,14 @@ import {createStore, combineReducers, applyMiddleware} from 'redux';
 import {Provider} from 'react-redux'; 
 import logger from 'redux-logger'; 
 
-const blankFeedback = {
+
+const nameLog = (state = '', action) => {
+    if(action.type === 'ADD_NAME'){
+        return action.payload;
+    } return state;
+} // stores current user's name 
+
+let blankFeedback = {
     taste: 0, 
     texture: 0,
     creativity: 0, 
@@ -16,71 +23,55 @@ const blankFeedback = {
     flagged: false, 
     date: '',
     meal: '', 
+    overall_rating: 0
 };
-const nameLog = (state = '', action) => {
-    if(action.type === 'ADD_NAME'){
-        return action.payload;
-    } return state;
-} // stores current user's name 
-
-const dinnerLog = (state = blankFeedback, action) => {
-    if(action.type === 'ADD_MEAL'){
-        const newFeedback = {
-            ...state,
-            meal: action.payload
-        }
-         return newFeedback; 
-    }
-    return state; 
-} // stores the current dinner entry 
-
 const feedback = (state = blankFeedback, action ) => {
-    if (action.type  === 'TASTE_RATING'){
-        const newFeedback = {
+    if(action.type === 'ADD_MEAL'){
+        return {
+             ...state,
+             meal: action.payload,
+         }
+     } else if (action.type  === 'TASTE_RATING'){
+      return  {
             ...state,
             taste: action.payload,
+            overall_rating: Number(state.overall_rating + action.payload)
         }
-        return newFeedback;
     } else if (action.type === 'TEXTURE_RATING'){
-        const newFeedback = {
+        return {
             ...state,
             texture: action.payload,
+            overall_rating: Number(state.overall_rating + action.payload)
         }
-        return newFeedback;
     } else if (action.type === 'CREATIVITY_RATING') { 
-        const newFeedback = {
+        return {
             ...state,
             creativity: action.payload,
+            overall_rating: Number(state.overall_rating + action.payload)
         }
-        return newFeedback;
     } else if (action.type === 'NUTRITION_RATING'){
-        const newFeedback = {
+       return {
             ...state,
             nutrition: action.payload,
+            overall_rating: Number(state.overall_rating + action.payload)
         }
-        return newFeedback;
     } else if (action.type === 'NEW_COMMENT'){
-        const newFeedback = {
+        return {
             ...state,
             comments: action.payload,
         }
-        return newFeedback;
-    } 
+    }   
     return state; 
 }
-
 const mealFeedbackHistory = (state = [], action ) => {
     if (action.type === 'SET_HISTORY'){
-        return action.payload; 
-    }  else if (action.type === 'SET_RATING'){
-        return [...state, action.payload]; 
+       return action.payload;
     }
     return state; 
 }
 const storeInstance = createStore (
     combineReducers({
         feedback, 
-        dinnerLog, 
         nameLog, 
         mealFeedbackHistory
     }), 

@@ -1,6 +1,26 @@
 import React, {Component} from 'react'; 
+import axios from 'axios'; 
+import {connect} from 'react-redux'; 
 
 class SubmissionView extends Component {
+    componentDidMount(){
+        this.postFeedbackToServer(); 
+    }
+    postFeedbackToServer = () => {
+        const newFeedback = this.props.reduxStore.feedback; 
+        console.log(newFeedback); 
+        axios({
+            method: 'POST',
+            url: '/feedback',
+            data: newFeedback
+        }).then((response) => {
+           console.log(response); 
+        }).catch((error) => {
+            console.log('Error posting feedback', error);
+            alert('Your dinner rating did not post. Please try again.'); 
+        })   
+    }
+
     returnHome = () => {
         this.props.history.push('/'); 
     }
@@ -13,4 +33,7 @@ class SubmissionView extends Component {
         );
     }
 }
-export default SubmissionView; 
+const mapReduxStoreToProps = (reduxStore) => ({
+    reduxStore
+});
+export default connect(mapReduxStoreToProps)(SubmissionView); 
