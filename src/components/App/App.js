@@ -14,16 +14,17 @@ import { Typography, Button } from '@material-ui/core';
 
 
 class App extends Component {
+
   render() {
     return (
-      <Router>
+      <Router >
       <div className="App">
         <header className="App-header">
           <h1 className="App-title">Dinner Diary</h1>
           <h4><i>365 Days of Yum</i></h4>
           <nav>
-            <Button variant="contained" color="primary"><a href="/">Home</a></Button>
-            <Button variant="contained" color="primary"><a href="/#/results">Ratings Log</a></Button>
+            <Button variant="contained" color="primary" onClick={this.goHome}><a href="/">Home</a></Button><span>  </span>
+            <Button variant="contained" color="primary" onClick={this.goToResults}><a href="/#/results">Ratings Log</a></Button>
           </nav>
         </header>
         <br/>

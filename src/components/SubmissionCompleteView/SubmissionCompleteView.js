@@ -1,6 +1,7 @@
 import React, {Component} from 'react'; 
 import axios from 'axios'; 
 import {connect} from 'react-redux'; 
+import { Typography, Button } from '@material-ui/core';
 
 class SubmissionView extends Component {
     componentDidMount(){
@@ -20,7 +21,6 @@ class SubmissionView extends Component {
             alert('Your dinner rating did not post. Please try again.'); 
         })   
     }
-
     returnHome = () => {
         this.props.history.push('/'); 
     }
@@ -28,7 +28,7 @@ class SubmissionView extends Component {
         return(
             <div>
             <p>Thanks for rating your dinner! A complete log of all ratings can be found on the <a href='#/results'>Results</a> page</p>
-            <button onClick={this.returnHome}>Return Home</button>
+            <Button variant="contained" color="primary" onClick={this.returnHome}>Return Home</Button>
             </div>
         );
     }

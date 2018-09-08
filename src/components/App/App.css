@@ -30,3 +30,6 @@ label {
   font-weight: bold; 
   font-size: 1.1em; 
 }
+a:link {
+    text-decoration: none;
+}
