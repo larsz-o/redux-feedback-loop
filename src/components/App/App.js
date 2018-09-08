@@ -10,7 +10,8 @@ import CommentsView from '../CommentsView/CommentsView.js';
 import SubmissionCompleteView from '../SubmissionCompleteView/SubmissionCompleteView';
 import ResultsView from '../ResultsView/ResultsView.js'; 
 import {HashRouter as Router, Route} from "react-router-dom";
-// import {Button} from 'material-ui'; 
+import { Typography, Button } from '@material-ui/core';
+
 
 class App extends Component {
   render() {
@@ -21,8 +22,8 @@ class App extends Component {
           <h1 className="App-title">Dinner Diary</h1>
           <h4><i>365 Days of Yum</i></h4>
           <nav>
-            <a href="/">Home</a>
-            <a href="/#/results">Ratings Log</a>
+            <Button variant="contained" color="primary"><a href="/">Home</a></Button>
+            <Button variant="contained" color="primary"><a href="/#/results">Ratings Log</a></Button>
           </nav>
         </header>
         <br/>

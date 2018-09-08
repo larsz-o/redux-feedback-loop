@@ -6,7 +6,19 @@ import registerServiceWorker from './registerServiceWorker';
 import {createStore, combineReducers, applyMiddleware} from 'redux'; 
 import {Provider} from 'react-redux'; 
 import logger from 'redux-logger'; 
+import {createMuiTheme} from '@material-ui/core/styles';
+import { MuiThemeProvider } from '@material-ui/core/styles'
 
+const theme = createMuiTheme({ 
+    palette: {
+        primary: {
+            light: '#FFFFFF', 
+            main: '#0EB3AA', 
+            dark: '#FFFFFF',
+            contrastText: 'rgb(0,0,0)'
+          }
+      }
+}) // Material UI theme setting 
 let blankFeedback = {
     taste: 0, 
     texture: 0,
@@ -76,5 +88,5 @@ const storeInstance = createStore (
     applyMiddleware(logger),
 );
 
-ReactDOM.render(<Provider store={storeInstance}><App /></Provider>, document.getElementById('root'));
+ReactDOM.render(<MuiThemeProvider theme={theme}><Provider store={storeInstance}><App /></Provider></MuiThemeProvider>, document.getElementById('root'));
 registerServiceWorker();
