@@ -10,21 +10,19 @@ class TextureView extends Component {
     }
  
     handleRangeChange = (event) => {
-        console.log(event.target.value);
         this.setState({
             texture: event.target.value,
         }); 
     }
     sendValueToRedux = () => {
         const action = {type: 'TEXTURE_RATING', payload: this.state.texture}; 
-        console.log(this.state.texture); 
         this.props.dispatch(action); 
         this.props.history.push('/creativity'); 
     }
     render(){
         return(
             <div>
-            <h2>How was the <span className="emphasis-word">texture </span>of {this.props.reduxStore.dinnerLog}?</h2>
+            <h2>How was the <span className="emphasis-word">texture </span>of {this.props.reduxStore.dinnerLog.meal}?</h2>
             <form>
                 <label>Terrible</label> <input onChange={this.handleRangeChange} className="slider" type="range" min="0" max="10"/><label> Amazing</label>
             </form> 

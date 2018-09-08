@@ -20,6 +20,7 @@ class App extends Component {
           <h1 className="App-title">Dinner Diary</h1>
           <h4><i>365 Days of Yum</i></h4>
         </header>
+        <br/>
           {/* client-side routers */}
           <Route exact path="/" component={HomeView}/>
           <Route path="/food" component={MealView}/>
@@ -30,9 +31,8 @@ class App extends Component {
           <Route path="/comments" component={CommentsView}/>
           <Route path="/submission" component={SubmissionCompleteView}/>
           <Route path="/results" component={ResultsView}/>
-        <br/>
       </div>
-      </Router>
+       </Router>
     );
   }
 }

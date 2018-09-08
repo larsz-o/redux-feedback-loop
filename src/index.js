@@ -14,7 +14,8 @@ const blankFeedback = {
     nutrition: 0, 
     comments: '', 
     flagged: false, 
-    date: ''
+    date: '',
+    meal: ''
 };
 const nameLog = (state = '', action) => {
     if(action.type === 'ADD_NAME'){
@@ -22,9 +23,13 @@ const nameLog = (state = '', action) => {
     } return state;
 } // stores current user's name 
 
-const dinnerLog = (state = '', action) => {
+const dinnerLog = (state = blankFeedback, action) => {
     if(action.type === 'ADD_MEAL'){
-         return action.payload; 
+        const newFeedback = {
+            ...state,
+            meal: action.payload
+        }
+         return newFeedback; 
     }
     return state; 
 } // stores the current dinner entry 

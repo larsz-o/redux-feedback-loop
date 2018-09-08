@@ -10,21 +10,19 @@ class NutritionView extends Component {
     }
  
     handleRangeChange = (event) => {
-        console.log(event.target.value);
         this.setState({
             nutrition: event.target.value,
         }); 
     }
     sendValueToRedux = () => {
         const action = {type: 'NUTRITION_RATING', payload: this.state.nutrition}; 
-        console.log(this.state.nutrition); 
         this.props.dispatch(action); 
         this.props.history.push('/comments'); 
     }
     render(){
         return(
             <div>
-            <h2>How <span className="emphasis-word">nutritious </span>was {this.props.reduxStore.dinnerLog}?</h2>
+            <h2>How <span className="emphasis-word">nutritious </span>was your meal of {this.props.reduxStore.dinnerLog.meal}?</h2>
                 <form>
                     <label>Terrible</label> <input onChange={this.handleRangeChange} className="slider" type="range" min="0" max="10"/><label> Amazing</label>
                 </form> 

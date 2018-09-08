@@ -10,14 +10,12 @@ class TasteView extends Component {
     }
  
     handleRangeChange = (event) => {
-        console.log(event.target.value);
         this.setState({
             taste: event.target.value,
         }); 
     }
     sendValueToRedux = () => {
         const action = {type: 'TASTE_RATING', payload: this.state.taste}; 
-        console.log(this.state.taste); 
         this.props.dispatch(action); 
         this.props.history.push('/texture'); 
     }
@@ -25,7 +23,7 @@ class TasteView extends Component {
     render(){
         return(
             <div>
-                <h2>How was the <span className="emphasis-word">taste </span>of {this.props.reduxStore.dinnerLog}?</h2>
+                <h2>How was the <span className="emphasis-word">taste </span>of {this.props.reduxStore.dinnerLog.meal}?</h2>
                 <form>
                     <label>Terrible</label> <input onChange={this.handleRangeChange} className="slider" type="range" min="0" max="10"/><label> Amazing</label>
                 </form> 
