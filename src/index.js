@@ -18,13 +18,13 @@ const blankFeedback = {
 };
 const nameLog = (state = '', action) => {
     if(action.type === 'ADD_NAME'){
-        return action.payload;
+        return action.payload.name;
     } return state;
 } // stores current user's name 
 
 const dinnerLog = (state = '', action) => {
     if(action.type === 'ADD_MEAL'){
-         return action.payload; 
+         return action.payload.meal; 
     }
     return state; 
 } // stores the current dinner entry 

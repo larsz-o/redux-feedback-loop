@@ -15,7 +15,7 @@ class MealView extends Component {
             meal: event.target.value,
         });
     } // end handleMealChange
-    
+
     submitMeal = (event) => {
         event.preventDefault();
         console.log('in submitMeal');
@@ -29,7 +29,7 @@ class MealView extends Component {
         console.log(this.state); 
         return(
             <div>
-                <h2>Hi, {this.props.reduxStore.nameLog}. What did you eat for dinner?</h2>
+                <h2>Hi, {this.props.reduxStore.nameLog}! What did you eat for dinner?</h2>
                 <form onSubmit={this.submitMeal}>
                     <label>Name: </label><input onChange={this.handleMealChange}/>
                     <button >Submit</button>
@@ -39,4 +39,7 @@ class MealView extends Component {
         );
     }
 }
-export default connect()(MealView); 
+const mapReduxStoreToProps = (reduxStore) => ({
+    reduxStore
+});
+export default connect(mapReduxStoreToProps)(MealView); 
