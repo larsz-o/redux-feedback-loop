@@ -16,4 +16,18 @@
 .App-intro {
   font-size: large;
 }
+label {
+  padding: 8px; 
+}
+.slider {
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+  transition: opacity .2s;
+  cursor: pointer;
+}
 
+#emphasis-word{
+  font-weight: bold; 
+  font-size: 1.1em; 
+}

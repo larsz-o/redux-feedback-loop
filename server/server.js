@@ -9,8 +9,8 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static('build'));
 
 /** ---------- EXPRESS ROUTES ---------- **/
-const mealsRouter = require('./routes/meals.router'); 
-app.use('/meals', mealsRouter); 
+const infoRouter = require('./routes/info.router.js'); 
+app.use('/info', infoRouter); 
 
 /** ---------- START SERVER ---------- **/
 app.listen(port, function () {

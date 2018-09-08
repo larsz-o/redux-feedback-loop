@@ -19,7 +19,7 @@ class HomeView extends Component {
     submitMeal = (event) => {
         event.preventDefault();
         console.log('in submitMeal');
-        const action = {type: 'ADD_NAME', payload: this.state};
+        const action = {type: 'ADD_NAME', payload: this.state.name};
         console.log(this.state); 
         this.props.dispatch(action); 
         this.props.history.push('/food'); 

@@ -5,9 +5,9 @@ const pool = require('../modules/pool.js');
 // Meal POST route 
 router.post('/', (req, res) => {
     const mealToAdd = req.body;
-    const query = `INSERT INTO "dinners" ("meal")
-VALUES $1;`;
-    pool.query(query, [mealToAdd.meal]).then((response) => {
+    const query = `INSERT INTO "dinners" ("meal", "name")
+VALUES $1, $2;`;
+    pool.query(query, [mealToAdd.meal, mealToAdd.name]).then((response) => {
         res.sendStatus(201);
     }).catch((error) => {
         console.log('Error posting meal', error);

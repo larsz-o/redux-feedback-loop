@@ -19,8 +19,8 @@ class MealView extends Component {
     submitMeal = (event) => {
         event.preventDefault();
         console.log('in submitMeal');
-        const action = {type: 'ADD_MEAL', payload: this.state};
-        console.log(this.state); 
+        const action = {type: 'ADD_MEAL', payload: this.state.meal};
+        console.log(this.state, action); 
         this.props.dispatch(action); 
         this.props.history.push('/taste'); 
     } // end submitMeal 

@@ -18,18 +18,25 @@ const blankFeedback = {
 };
 const nameLog = (state = '', action) => {
     if(action.type === 'ADD_NAME'){
-        return action.payload.name;
+        return action.payload;
     } return state;
 } // stores current user's name 
 
 const dinnerLog = (state = '', action) => {
     if(action.type === 'ADD_MEAL'){
-         return action.payload.meal; 
+         return action.payload; 
     }
     return state; 
 } // stores the current dinner entry 
 
 const feedback = (state = blankFeedback, action ) => {
+    if (action.type  === 'TASTE_RATING'){
+        const newFeedback = {
+            ...state,
+            taste: action.payload,
+        }
+        return newFeedback;
+    }
     return state; 
 }
 const storeInstance = createStore (
