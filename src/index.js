@@ -7,13 +7,6 @@ import {createStore, combineReducers, applyMiddleware} from 'redux';
 import {Provider} from 'react-redux'; 
 import logger from 'redux-logger'; 
 
-
-const nameLog = (state = '', action) => {
-    if(action.type === 'ADD_NAME'){
-        return action.payload;
-    } return state;
-} // stores current user's name 
-
 let blankFeedback = {
     taste: 0, 
     texture: 0,
@@ -23,10 +16,16 @@ let blankFeedback = {
     flagged: false, 
     date: '',
     meal: '', 
-    overall_rating: 0
+    overall_rating: 0, 
+    name: '', 
 };
 const feedback = (state = blankFeedback, action ) => {
-    if(action.type === 'ADD_MEAL'){
+    if(action.type === 'ADD_NAME'){
+        return {
+            ...state, 
+            name: action.payload
+        };
+    } else if(action.type === 'ADD_MEAL'){
         return {
              ...state,
              meal: action.payload,
@@ -71,8 +70,7 @@ const mealFeedbackHistory = (state = [], action ) => {
 }
 const storeInstance = createStore (
     combineReducers({
-        feedback, 
-        nameLog, 
+        feedback,  
         mealFeedbackHistory
     }), 
     applyMiddleware(logger),

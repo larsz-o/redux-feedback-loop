@@ -11,6 +11,8 @@ CREATE TABLE "feedback" (
   "flagged" boolean default false,
   "date" date not null default CURRENT_DATE, 
   "meal" varchar(250) not null, 
+  "overall_rating" int,
+  "name" varchar(70) 
 ); 
 -- Sample feedback item
 INSERT INTO "feedback" ("taste", "texture", "creativity", "nutrition", "comments", "meal")

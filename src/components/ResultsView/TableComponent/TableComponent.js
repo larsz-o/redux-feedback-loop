@@ -8,13 +8,14 @@ class TableComponent extends Component {
         <table>
                 <thead>
                     <tr>
+                        <th>Name</th>
                         <th>Meal</th>
                         <th>Taste</th>
                         <th>Texture</th>
                         <th>Creativity</th>
                         <th>Nutrition</th>
                         <th>Comments</th>
-                        <th>Overall Average Rating</th>
+                        <th>Overall Rating</th>
                         <th>Delete</th>
                     </tr>
                 </thead>

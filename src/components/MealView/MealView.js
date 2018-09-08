@@ -29,7 +29,7 @@ class MealView extends Component {
         console.log(this.state); 
         return(
             <div>
-                <h2>Hi, {this.props.reduxStore.nameLog}! What did you eat for dinner?</h2>
+                <h2>Hi, {this.props.reduxStore.feedback.name}! What did you eat for dinner?</h2>
                 <form onSubmit={this.submitMeal}>
                     <label>Describe your meal: </label><input onChange={this.handleMealChange}/>
                     <button >Submit</button>

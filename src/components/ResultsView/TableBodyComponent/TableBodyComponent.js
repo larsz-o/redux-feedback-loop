@@ -26,6 +26,7 @@ render(){
             {this.props.reduxStore.mealFeedbackHistory.map((dinner, i)=>{
                 return (
                 <tr key={i}>
+                    <td>{dinner.name}</td>
                     <td>{dinner.meal}</td>
                     <td>{dinner.taste}</td>
                     <td>{dinner.texture}</td>
@@ -33,7 +34,6 @@ render(){
                     <td>{dinner.nutrition}</td>
                     <td>{dinner.comments}</td>
                     <td>{dinner.overall_rating}</td>
-                    {/*  need to calculate with SQL query */}
                     <td>Delete</td>
                     {/* - fill in with icon that clicks to delete the entry in the database then re-runs redux store dispatch */}
                 </tr> 
