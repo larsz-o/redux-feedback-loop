@@ -68,11 +68,18 @@ const feedback = (state = blankFeedback, action ) => {
     } 
     return state; 
 }
+const mealFeedbackHistory = (state = [], action ) => {
+    if (action.type === 'SET_HISTORY'){
+        return action.payload; 
+    }
+    return state; 
+}
 const storeInstance = createStore (
     combineReducers({
         feedback, 
         dinnerLog, 
-        nameLog
+        nameLog, 
+        mealFeedbackHistory
     }), 
     applyMiddleware(logger),
 );

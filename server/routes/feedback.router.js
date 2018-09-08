@@ -19,7 +19,8 @@ router.post('/', (req, res) => {
 router.get('/', (req, res) => {
     const query = `SELECT * FROM "feedback";`; 
     pool.query(query).then((results) => {
-        res.send(response.rows)
+        console.log(results.rows);
+        res.send(results.rows)
     }).catch((error) => {
         console.log('Error getting feedback', error);
         res.sendStatus(500); 
