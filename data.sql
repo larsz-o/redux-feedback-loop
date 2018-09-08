@@ -16,3 +16,6 @@ CREATE TABLE "feedback" (
 INSERT INTO "feedback" ("taste", "texture", "creativity", "nutrition", "comments", "meal")
 VALUES (4, 4, 5, 3, 'I loved this meal!', 'butternut squash soup');
 
+--adds all ratings to get a total score 
+SELECT COALESCE ("taste") + ("texture") + ("creativity") + ("nutrition") AS "total" FROM "feedback";
+

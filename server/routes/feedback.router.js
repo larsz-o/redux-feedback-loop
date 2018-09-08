@@ -15,7 +15,7 @@ router.post('/', (req, res) => {
     })
 });
 
-// Feedback GET route 
+// Feedback GET routes
 router.get('/', (req, res) => {
     const query = `SELECT * FROM "feedback";`; 
     pool.query(query).then((results) => {
@@ -26,5 +26,16 @@ router.get('/', (req, res) => {
         res.sendStatus(500); 
     })
 }); 
+router.get('/totals', (req, res) => {
+    const query = `SELECT COALESCE ("taste") + ("texture") + ("creativity") + ("nutrition") AS "total" FROM "feedback";`; 
+    pool.query(query).then((results) => {
+        console.log(results.rows);
+        res.send(results.rows)
+    }).catch((error) => {
+        console.log('Error getting feedback', error);
+        res.sendStatus(500); 
+    })
+}); 
+// gets the sum of each rating to display in the results table as an overall rating
 
 module.exports = router;

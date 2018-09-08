@@ -15,7 +15,7 @@ const blankFeedback = {
     comments: '', 
     flagged: false, 
     date: '',
-    meal: ''
+    meal: '', 
 };
 const nameLog = (state = '', action) => {
     if(action.type === 'ADD_NAME'){
@@ -68,9 +68,12 @@ const feedback = (state = blankFeedback, action ) => {
     } 
     return state; 
 }
+
 const mealFeedbackHistory = (state = [], action ) => {
     if (action.type === 'SET_HISTORY'){
         return action.payload; 
+    }  else if (action.type === 'SET_RATING'){
+        return [...state, action.payload]; 
     }
     return state; 
 }

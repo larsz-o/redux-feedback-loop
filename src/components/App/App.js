@@ -19,6 +19,10 @@ class App extends Component {
         <header className="App-header">
           <h1 className="App-title">Dinner Diary</h1>
           <h4><i>365 Days of Yum</i></h4>
+          <nav>
+            <a href="/">Home</a>
+            <a href="/#/results">Ratings Log</a>
+          </nav>
         </header>
         <br/>
           {/* client-side routers */}
