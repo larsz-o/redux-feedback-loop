@@ -36,7 +36,31 @@ const feedback = (state = blankFeedback, action ) => {
             taste: action.payload,
         }
         return newFeedback;
-    }
+    } else if (action.type === 'TEXTURE_RATING'){
+        const newFeedback = {
+            ...state,
+            texture: action.payload,
+        }
+        return newFeedback;
+    } else if (action.type === 'CREATIVITY_RATING') { 
+        const newFeedback = {
+            ...state,
+            creativity: action.payload,
+        }
+        return newFeedback;
+    } else if (action.type === 'NUTRITION_RATING'){
+        const newFeedback = {
+            ...state,
+            nutrition: action.payload,
+        }
+        return newFeedback;
+    } else if (action.type === 'NEW_COMMENT'){
+        const newFeedback = {
+            ...state,
+            comments: action.payload,
+        }
+        return newFeedback;
+    } 
     return state; 
 }
 const storeInstance = createStore (
