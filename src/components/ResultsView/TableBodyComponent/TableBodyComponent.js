@@ -14,7 +14,10 @@ render(){
                     <td>{dinner.creativity}</td>
                     <td>{dinner.nutrition}</td>
                     <td>{dinner.comments}</td>
-                    <td>Rating -- need to calculate with SQL query</td>
+                    <td>Rating</td>
+                    {/*  need to calculate with SQL query */}
+                    <td>Delete</td>
+                    {/* - fill in with icon that clicks to delete the entry in the database then re-runs redux store dispatch */}
                 </tr> 
                 );
             })}  

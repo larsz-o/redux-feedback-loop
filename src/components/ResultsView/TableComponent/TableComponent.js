@@ -15,6 +15,7 @@ class TableComponent extends Component {
                         <th>Nutrition</th>
                         <th>Comments</th>
                         <th>Overall Average Rating</th>
+                        <th>Delete</th>
                     </tr>
                 </thead>
                <TableBodyComponent/>
