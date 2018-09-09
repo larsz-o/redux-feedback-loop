@@ -10,7 +10,7 @@ import CommentsView from '../CommentsView/CommentsView.js';
 import SubmissionCompleteView from '../SubmissionCompleteView/SubmissionCompleteView';
 import ResultsView from '../ResultsView/ResultsView.js'; 
 import {HashRouter as Router, Route} from "react-router-dom";
-import { Typography, Button } from '@material-ui/core';
+import { Typography, Grid, Button } from '@material-ui/core';
 
 
 class App extends Component {
@@ -20,12 +20,14 @@ class App extends Component {
       <Router >
       <div className="App">
         <header className="App-header">
-          <h1 className="App-title">Dinner Diary</h1>
-          <h4><i>365 Days of Yum</i></h4>
-          <nav>
-            <Button variant="contained" color="primary" onClick={this.goHome}><a href="/">Home</a></Button><span>  </span>
-            <Button variant="contained" color="primary" onClick={this.goToResults}><a href="/#/results">Ratings Log</a></Button>
-          </nav>
+        <Typography variant="display3" class="header-text" gutterBottom>Dinner Diary</Typography>
+          <Typography variant="subheading" class="header-text" gutterBottom>365 Days of Yum</Typography>
+          <Grid container spacing={40}>
+          <Grid item sm={12}>
+            <Button href="/" color="primary" onClick={this.goHome}>Home</Button><span>  </span>
+            <Button href="/#/results" color="primary" onClick={this.goToResults}>Ratings Log</Button>
+            </Grid>
+          </Grid>
         </header>
         <br/>
           {/* client-side routers */}

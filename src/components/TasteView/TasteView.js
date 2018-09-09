@@ -1,5 +1,6 @@
 import React, {Component} from 'react'; 
 import {connect} from 'react-redux'; 
+import {Button, Typography} from '@material-ui/core';
 
 class TasteView extends Component {
     constructor(){
@@ -23,12 +24,12 @@ class TasteView extends Component {
     render(){
         return(
             <div>
-                <h2>How was the <span className="emphasis-word">taste </span>of {this.props.reduxStore.feedback.meal}?</h2>
-                <form>
+                <Typography variant='display1' align='center' gutterBottom>How was the <span className="emphasis-word">taste </span>of {this.props.reduxStore.feedback.meal}?</Typography>
+                    <form>
                     <label>Terrible</label> <input onChange={this.handleRangeChange} className="slider" type="range" min="0" max="10"/><label> Amazing</label>
-                </form> 
-               <p>Rating: {this.state.taste}</p> 
-               <button onClick={this.sendValueToRedux}>Next</button>
+                    </form>
+                <Typography variant='body2' align='center' gutterBottomRating>Rating: {this.state.taste}</Typography> 
+               <Button variant="contained" color="primary"onClick={this.sendValueToRedux}>Next</Button>
             </div>
         );
     }

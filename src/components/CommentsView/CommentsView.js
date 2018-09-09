@@ -1,5 +1,6 @@
 import React, {Component} from 'react'; 
 import {connect} from 'react-redux'; 
+import {FormControl, Typography, Input, Button} from '@material-ui/core'; 
 
 class CommentsView extends Component {
     constructor(){
@@ -7,6 +8,9 @@ class CommentsView extends Component {
     this.state = {
             comments: '',
         }
+    }
+    handleClick = (event) => {
+        console.log('you clicked', event.target.value);
     }
     handleTextChange = (event) => {
         console.log(event.target.value); 
@@ -25,9 +29,11 @@ class CommentsView extends Component {
     render(){
         return(
             <div>
-                <h2>Do you have any comments about today's dinner of {this.props.reduxStore.feedback.meal}?</h2>
-                <textarea onChange={this.handleTextChange} rows="4" cols="50"/><br/>
-                <button onClick={this.sendValueToRedux}>Submit</button>
+                <Typography variant='display1' align='center' gutterBottom>Do you have any comments about today's dinner of {this.props.reduxStore.feedback.meal}?</Typography>
+                <FormControl>
+                <Input rows={4} rowsMax={6} onChange={this.handleTextChange}/><br/>
+                <Button variant="contained" color="primary" onClick={this.sendValueToRedux}>Submit</Button>
+                </FormControl>
             </div>
         );
     }

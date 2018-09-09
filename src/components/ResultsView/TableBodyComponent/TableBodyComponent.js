@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import axios from 'axios'; 
+import {TableBody, TableCell, TableRow} from '@material-ui/core'; 
+import Delete from '@material-ui/icons/Delete'; 
 
 class TableBodyComponent extends Component {
 getCurrentRatingData = () => {
@@ -16,30 +18,33 @@ getCurrentRatingData = () => {
         console.log('Error getting current ratings data', error);
     })
 } // gets the latest ratings data, dispatches that to the redux store
-componentDidMount(){
-   this.getCurrentRatingData();
-}
+    componenTableCellidMount(){
+        this.getCurrentRatingData();
+    }
+
+    handleDelete = (id) => {
+        
+    }   
 render(){
     return (
-        
-        <tbody>
+        <TableBody>
             {this.props.reduxStore.mealFeedbackHistory.map((dinner, i)=>{
                 return (
-                <tr key={i}>
-                    <td>{dinner.name}</td>
-                    <td>{dinner.meal}</td>
-                    <td>{dinner.taste}</td>
-                    <td>{dinner.texture}</td>
-                    <td>{dinner.creativity}</td>
-                    <td>{dinner.nutrition}</td>
-                    <td>{dinner.comments}</td>
-                    <td>{dinner.overall_rating}</td>
-                    <td>Delete</td>
+                <TableRow key={i}>
+                    <TableCell>{dinner.name}</TableCell>
+                    <TableCell>{dinner.meal}</TableCell>
+                    <TableCell>{dinner.taste}</TableCell>
+                    <TableCell>{dinner.texture}</TableCell>
+                    <TableCell>{dinner.creativity}</TableCell>
+                    <TableCell>{dinner.nutrition}</TableCell>
+                    <TableCell>{dinner.comments}</TableCell>
+                    <TableCell>{dinner.overall_rating}</TableCell>
+                    <TableCell><Delete onClick={this.handleDelete}/></TableCell>
                     {/* - fill in with icon that clicks to delete the entry in the database then re-runs redux store dispatch */}
-                </tr> 
+                </TableRow> 
                 );
             })}  
-        </tbody>
+        </TableBody>
 
         );
     }

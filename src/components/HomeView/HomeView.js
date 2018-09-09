@@ -1,6 +1,6 @@
 import React, {Component} from 'react'; 
 import {connect} from 'react-redux'; 
-import { Typography, Button } from '@material-ui/core';
+import { Typography, Button, Input, FormControl} from '@material-ui/core';
 
 class HomeView extends Component {
     constructor(){
@@ -30,10 +30,10 @@ class HomeView extends Component {
         return(
             <div>
                 <Typography variant='display1' align='center' gutterBottom>Hello! What's your name?</Typography>
-                <form >
-                    <label>Name: </label><input onChange={this.handleNameChange}/><br/><br/>
+                <FormControl >
+                    <Input onChange={this.handleNameChange} required/><br/><br/>
                     <Button variant="contained" color="primary" onClick={this.submitMeal}>Submit</Button>
-                </form>
+                </FormControl>
             
             </div>
         );

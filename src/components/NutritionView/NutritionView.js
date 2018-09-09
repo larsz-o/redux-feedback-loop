@@ -1,5 +1,6 @@
 import React, {Component} from 'react'; 
 import {connect} from 'react-redux'; 
+import {Button, Typography} from '@material-ui/core';
 
 class NutritionView extends Component {
     constructor(){
@@ -22,12 +23,12 @@ class NutritionView extends Component {
     render(){
         return(
             <div>
-            <h2>How <span className="emphasis-word">nutritious </span>was your meal of {this.props.reduxStore.feedback.meal}?</h2>
+            <Typography variant='display1' align='center' gutterBottom>How <span className="emphasis-word">nutritious </span>was your meal of {this.props.reduxStore.feedback.meal}?</Typography>
                 <form>
                     <label>Terrible</label> <input onChange={this.handleRangeChange} className="slider" type="range" min="0" max="10"/><label> Amazing</label>
                 </form> 
-                <p>Rating: {this.state.nutrition}</p> 
-                <button onClick={this.sendValueToRedux}>Next</button>
+                <Typography variant='body2' align='center' gutterBottom>Rating: {this.state.nutrition}</Typography> 
+                <Button variant="contained" color="primary" onClick={this.sendValueToRedux}>Next</Button>
             </div>
         );
     }

@@ -1,5 +1,6 @@
 import React, {Component} from 'react'; 
 import {connect} from 'react-redux'; 
+import {Button, Typography, FormControl, Input} from '@material-ui/core';
 
 class CreativityView extends Component {
     constructor(){
@@ -22,12 +23,10 @@ class CreativityView extends Component {
     render(){
         return(
             <div>
-                <h2>How <span className="emphasis-word">creative </span>was your meal of {this.props.reduxStore.feedback.meal}?</h2>
-                     <form>
+                <Typography variant='display1' align='center' gutterBottom>How <span className="emphasis-word">creative </span>was your meal of {this.props.reduxStore.feedback.meal}?</Typography>
                         <label>Terrible</label> <input onChange={this.handleRangeChange} className="slider" type="range" min="0" max="10"/><label> Amazing</label>
-                    </form> 
-                <p>Rating: {this.state.creativity}</p> 
-                <button onClick={this.sendValueToRedux}>Next</button>
+                    <Typography variant='body2' align='center' gutterBottom>Rating: {this.state.creativity}</Typography> 
+                <Button variant="contained" color="primary"onClick={this.sendValueToRedux}>Next</Button>
             </div>
         );
     }

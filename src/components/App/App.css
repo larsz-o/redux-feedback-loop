@@ -2,7 +2,7 @@
   text-align: center;
 }
 
-.App-header {
+.App-header{
   background-color: #033076;
   min-height: 70px;
   padding: 20px;
@@ -16,6 +16,9 @@
 .App-intro {
   font-size: large;
 }
+a:link {
+  text-decoration: none;
+}
 label {
   padding: 8px; 
 }
@@ -26,10 +29,10 @@ label {
   transition: opacity .2s;
   cursor: pointer;
 }
-#emphasis-word{
+.emphasis-word{
   font-weight: bold; 
   font-size: 1.1em; 
 }
-a:link {
-    text-decoration: none;
+.header-text{
+  color: white; 
 }
