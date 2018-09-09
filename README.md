@@ -36,9 +36,9 @@ npm run client
 - [x] Dinner Diary collects user's ratings (on a scale from 0-10) on taste, texture, creativity, and nutrition of each meal and allows users to submit comments. 
 - [x] Ratings are stored in a Redux Store until a user has completed an entire review. After the review is submitted, the data is stored in a PostgreSQL database. 
 - [x] Users can view their history of ratings in the Ratings Log and see a total overall rating for each meal. 
+- [x] Users can sort the Results Log table by each rating category, date, user name, and meal name.
 - [x] The Ratings Logs also allows users to delete or flag entries for review. 
 - [x] When an entry is flagged for review, the entire row turns a red color. 
-- [x] User can sort the Results Log table by each rating category, date, user name, and meal name.
 
 ## Next Steps
 - [ ] Allow users to upload or link to recipes.
