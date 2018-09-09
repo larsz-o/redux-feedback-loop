@@ -1,6 +1,6 @@
 import React, {Component} from 'react'; 
 import {connect} from 'react-redux'; 
-import {Typography, Button, Input, FormControl} from '@material-ui/core'; 
+import {Typography, Button, Input, FormControl, Grid} from '@material-ui/core'; 
 
 class MealView extends Component {
     constructor(){
@@ -16,15 +16,17 @@ class MealView extends Component {
             meal: event.target.value,
         });
     } // end handleMealChange
-
-    submitMeal = (event) => {
+    navigateBack = () => {
+        this.props.history.push('/');
+    }
+    sendMealToRedux = (event) => {
         event.preventDefault();
         console.log('in submitMeal');
         const action = {type: 'ADD_MEAL', payload: this.state.meal};
         console.log(this.state, action); 
         this.props.dispatch(action); 
         this.props.history.push('/taste'); 
-    } // end submitMeal 
+    } // end sendMealToRedux 
 
     render(){
         console.log(this.state); 
@@ -34,9 +36,15 @@ class MealView extends Component {
                 What did you eat for dinner?</Typography>
                 <FormControl>
                     <Input onChange={this.handleMealChange} required/> <br/>
-                    <Button variant="contained" color="secondary" onClick={this.submitMeal}>Submit</Button>
                 </FormControl>
-            
+                <Grid container spacing={16}>
+                    <Grid item xs={6}>
+                    <Button variant="contained" onClick={this.navigateBack}>Back</Button>
+                    </Grid>
+                    <Grid item xs={6}>
+                    <Button variant="contained" color="secondary" onClick={this.sendMealToRedux}>Next</Button>
+                </Grid>
+                </Grid>
             </div>
         );
     }

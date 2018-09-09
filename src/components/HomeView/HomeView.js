@@ -31,10 +31,10 @@ class HomeView extends Component {
             <div className="form-view">
                 <Typography variant='display1' align='center' gutterBottom>Hello! What's your name?</Typography>
                 <FormControl >
-                    <Input onChange={this.handleNameChange} required/><br/><br/>
+                    <Input onChange={this.handleNameChange} required/><br/><br/>    
                     <Button variant="contained" color="secondary" onClick={this.submitMeal}>Submit</Button>
                 </FormControl>
-            
+               
             </div>
         );
     }

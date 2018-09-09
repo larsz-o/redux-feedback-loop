@@ -1,6 +1,6 @@
 import React, {Component} from 'react'; 
 import {connect} from 'react-redux'; 
-import {FormControl, Typography, Input, Button} from '@material-ui/core'; 
+import {FormControl, Typography, Input, Button, Grid} from '@material-ui/core'; 
 
 class CommentsView extends Component {
     constructor(){
@@ -18,6 +18,9 @@ class CommentsView extends Component {
             comments: event.target.value,
         }); 
     }
+    navigateBack = () => {
+        this.props.history.push('/nutrition'); 
+    }
     sendValueToRedux = () => {
         const action = {type: 'NEW_COMMENT', payload: this.state.comments}; 
         console.log(this.state.comments); 
@@ -32,8 +35,15 @@ class CommentsView extends Component {
                 <Typography variant="display1" align="center" gutterBottom>Do you have any comments about today's dinner of {this.props.reduxStore.feedback.meal}?</Typography>
                 <FormControl>
                 <Input fullWidth={true} onChange={this.handleTextChange}/><br/>
-                <Button variant="contained" color="secondary" onClick={this.sendValueToRedux}>Submit</Button>
                 </FormControl>
+                <Grid container spacing={16}>
+                    <Grid item xs={6}>
+                    <Button variant="contained" onClick={this.navigateBack}>Back</Button>
+                    </Grid>
+                    <Grid item xs={6}>
+                    <Button variant="contained" color="secondary" onClick={this.sendValueToRedux}>Submit</Button>
+                </Grid>
+                </Grid>
             </div>
         );
     }

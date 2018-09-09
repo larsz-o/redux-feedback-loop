@@ -26,7 +26,7 @@ Now that the server is running, open a new terminal tab with `cmd + t` and start
 npm run client
 ```
 
-## Screen Shot
+## Screen Shots
 ![ScreenShot of Dinner Diary](https://github.com/larsz-o/redux-feedback-loop/blob/master/public/images/dinner.png)
 ![ScreenShot of Dinner Diary](https://github.com/larsz-o/redux-feedback-loop/blob/master/public/images/taste.png)
 

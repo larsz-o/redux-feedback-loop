@@ -1,6 +1,6 @@
 import React, {Component} from 'react'; 
 import {connect} from 'react-redux'; 
-import {Button, Typography} from '@material-ui/core';
+import {Button, Typography, Grid} from '@material-ui/core';
 
 class TasteView extends Component {
     constructor(){
@@ -14,6 +14,9 @@ class TasteView extends Component {
         this.setState({
             taste: event.target.value,
         }); 
+    }
+    navigateBack = () => {
+        this.props.history.push('/food'); 
     }
     sendValueToRedux = () => {
         const action = {type: 'TASTE_RATING', payload: this.state.taste}; 
@@ -29,7 +32,14 @@ class TasteView extends Component {
                     <label>Terrible</label> <input onChange={this.handleRangeChange} className="slider" type="range" min="0" max="10"/><label> Amazing</label>
                     </form><br/>
                 <Typography variant='body2' align='center' gutterBottomRating>Rating: {this.state.taste}</Typography> <br/>
-               <Button variant="contained" color="secondary" onClick={this.sendValueToRedux}>Next</Button>
+               <Grid container spacing={16}>
+                    <Grid item xs={6}>
+                    <Button variant="contained" onClick={this.navigateBack}>Back</Button>
+                    </Grid>
+                    <Grid item xs={6}>
+                    <Button variant="contained" color="secondary" onClick={this.sendValueToRedux}>Next</Button>
+                </Grid>
+                </Grid>
             </div>
         );
     }
