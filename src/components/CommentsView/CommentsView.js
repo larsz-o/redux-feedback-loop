@@ -28,11 +28,11 @@ class CommentsView extends Component {
     
     render(){
         return(
-            <div>
-                <Typography variant='display1' align='center' gutterBottom>Do you have any comments about today's dinner of {this.props.reduxStore.feedback.meal}?</Typography>
+            <div className="form-view">
+                <Typography variant="display1" align="center" gutterBottom>Do you have any comments about today's dinner of {this.props.reduxStore.feedback.meal}?</Typography>
                 <FormControl>
-                <Input onChange={this.handleTextChange}/><br/>
-                <Button variant="contained" color="primary" onClick={this.sendValueToRedux}>Submit</Button>
+                <Input fullWidth={true} onChange={this.handleTextChange}/><br/>
+                <Button variant="contained" color="secondary" onClick={this.sendValueToRedux}>Submit</Button>
                 </FormControl>
             </div>
         );

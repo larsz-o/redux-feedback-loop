@@ -28,11 +28,11 @@ class HomeView extends Component {
     render(){
         console.log(this.state); 
         return(
-            <div>
+            <div className="form-view">
                 <Typography variant='display1' align='center' gutterBottom>Hello! What's your name?</Typography>
                 <FormControl >
                     <Input onChange={this.handleNameChange} required/><br/><br/>
-                    <Button variant="contained" color="primary" onClick={this.submitMeal}>Submit</Button>
+                    <Button variant="contained" color="secondary" onClick={this.submitMeal}>Submit</Button>
                 </FormControl>
             
             </div>

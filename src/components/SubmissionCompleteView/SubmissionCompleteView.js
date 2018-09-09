@@ -28,8 +28,9 @@ class SubmissionView extends Component {
     }
     render(){
         return(
-            <div>
-            <Typography variant="headline" align= "center" gutterBottom>Thanks for rating your dinner! A complete log of all ratings can be found on the <Button variant="fab" color="primary" href="/#/results">Ratings</Button> page</Typography>
+            <div className="form-view">
+            <Typography variant="headline" align= "center" gutterBottom>Thanks for rating your dinner!<br/>
+            A complete log of all ratings can be found on the <Button variant="fab" color="secondary" href="/#/results">Ratings</Button> page</Typography>
             <Button variant="contained" color="primary" onClick={this.returnHome}>Return Home</Button>
             </div>
         );

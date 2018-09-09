@@ -29,12 +29,12 @@ class MealView extends Component {
     render(){
         console.log(this.state); 
         return(
-            <div>
+            <div className="form-view">
                 <Typography variant='display1' align='center' gutterBottom>Hi, {this.props.reduxStore.feedback.name}! 
                 What did you eat for dinner?</Typography>
                 <FormControl>
                     <Input onChange={this.handleMealChange} required/> <br/>
-                    <Button variant="contained" color="primary" onClick={this.submitMeal}>Submit</Button>
+                    <Button variant="contained" color="secondary" onClick={this.submitMeal}>Submit</Button>
                 </FormControl>
             
             </div>
