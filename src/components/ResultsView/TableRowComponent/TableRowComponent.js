@@ -7,7 +7,11 @@ import './TableRow.css';
 import moment from 'moment'; 
 
 class TableBodyComponent extends Component {
-getCurrentRatingData = () => {
+    componenTableCellidMount(){
+        this.getCurrentRatingData();
+    }
+    // getCurrentRatingData gets all data without sorting 
+    getCurrentRatingData = () => {
     axios({
         method: 'GET', 
         url: '/feedback'
@@ -19,9 +23,6 @@ getCurrentRatingData = () => {
         console.log('Error getting current ratings data', error);
     })
 } // gets the latest ratings data, dispatches that to the redux store
-    componenTableCellidMount(){
-        this.getCurrentRatingData();
-    }
     flagFeedback = () => {
         console.log('in flag feedback');
         let id = this.props.dinner.id; 
@@ -45,7 +46,8 @@ getCurrentRatingData = () => {
             alert('Error deleting!');
             console.log('Error deleting item', error); 
         })
-    }   
+    } 
+  
 render(){
     return (
                 <TableRow className={this.props.dinner.flagged.toString()} key={this.props.i}>

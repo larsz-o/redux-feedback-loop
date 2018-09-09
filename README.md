@@ -1,5 +1,5 @@
 # Dinner Diary
-A React.js app for rating daily meals. Keep track of your dinners to remember which meals you liked best. 
+A React.js app for rating daily meals. Keep track of your dinners and remember which meals you liked best. 
 
 ## Built With
 * React.js
