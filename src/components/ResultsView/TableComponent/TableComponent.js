@@ -28,6 +28,7 @@ class TableComponent extends Component {
                     <TableRow>
                         <TableCell>Name</TableCell>
                         <TableCell>Meal</TableCell>
+                        <TableCell>Date</TableCell>
                         <TableCell>Taste</TableCell>
                         <TableCell>Texture</TableCell>
                         <TableCell>Creativity</TableCell>

@@ -4,6 +4,7 @@ import axios from 'axios';
 import {TableCell, TableRow} from '@material-ui/core'; 
 import Delete from '@material-ui/icons/Delete'; 
 import './TableRow.css'; 
+import moment from 'moment'; 
 
 class TableBodyComponent extends Component {
 getCurrentRatingData = () => {
@@ -50,6 +51,7 @@ render(){
                 <TableRow className={this.props.dinner.flagged.toString()} key={this.props.i}>
                     <TableCell>{this.props.dinner.name}</TableCell>
                     <TableCell>{this.props.dinner.meal}</TableCell>
+                    <TableCell>{moment(this.props.dinner.date).format('MM/DD/YYYY')}</TableCell>
                     <TableCell>{this.props.dinner.taste}</TableCell>
                     <TableCell>{this.props.dinner.texture}</TableCell>
                     <TableCell>{this.props.dinner.creativity}</TableCell>
