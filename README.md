@@ -38,11 +38,11 @@ npm run client
 - [x] Users can view their history of ratings in the Ratings Log and see a total overall rating for each meal. 
 - [x] The Ratings Logs also allows users to delete or flag entries for review. 
 - [x] When an entry is flagged for review, the entire row turns a red color. 
+- [x] User can sort the Results Log table by each rating category, date, user name, and meal name.
 
 ## Next Steps
 - [ ] Allow users to upload or link to recipes.
 - [ ] Allow for multiple users to login and compare ratings against others in their household. 
-- [ ] Allow users to sort the Results Log table by rating. 
 
 ## Author
 @larsz-o
