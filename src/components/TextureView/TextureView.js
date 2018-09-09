@@ -26,8 +26,8 @@ class TextureView extends Component {
             <Typography variant="display1" align='center' gutterBottom>How was the <span className="emphasis-word">texture </span>of {this.props.reduxStore.feedback.meal}?</Typography>
             <form>
                 <label>Terrible</label> <input onChange={this.handleRangeChange} className="slider" type="range" min="0" max="10"/><label> Amazing</label>
-            </form> 
-            <Typography variant="body2" align='center' gutterBottom>Rating: {this.state.texture}</Typography> 
+            </form> <br/>
+            <Typography variant="body2" align='center' gutterBottom>Rating: {this.state.texture}</Typography> <br/>
            <Button variant="contained" color="primary" onClick={this.sendValueToRedux}>Next</Button>
         </div>
         );

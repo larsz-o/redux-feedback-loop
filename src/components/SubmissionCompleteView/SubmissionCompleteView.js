@@ -16,6 +16,8 @@ class SubmissionView extends Component {
             data: newFeedback
         }).then((response) => {
            console.log(response); 
+           const action = {type: 'CLEAR_RATING'};
+           this.props.dispatch(action); 
         }).catch((error) => {
             console.log('Error posting feedback', error);
             alert('Your dinner rating did not post. Please try again.'); 

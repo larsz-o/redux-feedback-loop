@@ -26,8 +26,8 @@ class NutritionView extends Component {
             <Typography variant='display1' align='center' gutterBottom>How <span className="emphasis-word">nutritious </span>was your meal of {this.props.reduxStore.feedback.meal}?</Typography>
                 <form>
                     <label>Terrible</label> <input onChange={this.handleRangeChange} className="slider" type="range" min="0" max="10"/><label> Amazing</label>
-                </form> 
-                <Typography variant='body2' align='center' gutterBottom>Rating: {this.state.nutrition}</Typography> 
+                </form> <br/>
+                <Typography variant='body2' align='center' gutterBottom>Rating: {this.state.nutrition}</Typography> <br/>
                 <Button variant="contained" color="primary" onClick={this.sendValueToRedux}>Next</Button>
             </div>
         );

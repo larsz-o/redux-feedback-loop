@@ -46,32 +46,34 @@ const feedback = (state = blankFeedback, action ) => {
       return  {
             ...state,
             taste: action.payload,
-            overall_rating: Number(state.overall_rating + action.payload)
+            overall_rating: Number(state.overall_rating) + Number(action.payload)
         }
     } else if (action.type === 'TEXTURE_RATING'){
         return {
             ...state,
             texture: action.payload,
-            overall_rating: Number(state.overall_rating + action.payload)
+            overall_rating: Number(state.overall_rating) + Number(action.payload)
         }
     } else if (action.type === 'CREATIVITY_RATING') { 
         return {
             ...state,
             creativity: action.payload,
-            overall_rating: Number(state.overall_rating + action.payload)
+            overall_rating: Number(state.overall_rating) + Number(action.payload)
         }
     } else if (action.type === 'NUTRITION_RATING'){
        return {
             ...state,
             nutrition: action.payload,
-            overall_rating: Number(state.overall_rating + action.payload)
+            overall_rating: Number(state.overall_rating) + Number(action.payload)
         }
     } else if (action.type === 'NEW_COMMENT'){
         return {
             ...state,
             comments: action.payload,
         }
-    }   
+    }   else if (action.type === 'CLEAR_RATING'){
+        return blankFeedback;
+    }
     return state; 
 }
 const mealFeedbackHistory = (state = [], action ) => {

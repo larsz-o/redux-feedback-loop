@@ -31,7 +31,7 @@ class CommentsView extends Component {
             <div>
                 <Typography variant='display1' align='center' gutterBottom>Do you have any comments about today's dinner of {this.props.reduxStore.feedback.meal}?</Typography>
                 <FormControl>
-                <Input rows={4} rowsMax={6} onChange={this.handleTextChange}/><br/>
+                <Input onChange={this.handleTextChange}/><br/>
                 <Button variant="contained" color="primary" onClick={this.sendValueToRedux}>Submit</Button>
                 </FormControl>
             </div>
