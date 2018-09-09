@@ -21,11 +21,10 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
         <Typography variant="display3" class="header-text" gutterBottom>Dinner Diary</Typography>
-          <Typography variant="subheading" class="header-text" gutterBottom>365 Days of Yum</Typography>
           <Grid container spacing={40}>
           <Grid item sm={12}>
-            <Button href="/" color="primary" onClick={this.goHome}>Home</Button><span>  </span>
-            <Button href="/#/results" color="primary" onClick={this.goToResults}>Ratings Log</Button>
+            <Button href="/" color="primary" variant="contained" onClick={this.goHome}>Home</Button><span>  </span>
+            <Button href="/#/results" color="primary" variant="contained" onClick={this.goToResults}>Ratings Log</Button>
             </Grid>
           </Grid>
         </header>
