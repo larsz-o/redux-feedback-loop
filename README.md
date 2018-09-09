@@ -4,6 +4,8 @@ A React.js app for rating daily meals. Keep track of your dinners to remember wh
 ## Built With
 * React.js
 * Redux
+* React-Redux
+* React Routing 
 * Node.js
 * Express
 * Material UI
