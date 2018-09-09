@@ -20,6 +20,12 @@ a:link {
 label {
   padding: 8px; 
 }
+textarea{
+  border-radius: 5px; 
+  width: 400px; 
+  height: 200px; 
+  margin: 10px;
+}
 .slider {
   outline: none;
   opacity: 0.7;

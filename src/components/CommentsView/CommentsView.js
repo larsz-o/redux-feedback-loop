@@ -34,7 +34,7 @@ class CommentsView extends Component {
             <div className="form-view">
                 <Typography variant="display1" align="center" gutterBottom>Do you have any comments about today's dinner of {this.props.reduxStore.feedback.meal}?</Typography>
                 <FormControl>
-                <Input fullWidth={true} onChange={this.handleTextChange}/><br/>
+                <textarea onChange={this.handleTextChange}/><br/>
                 </FormControl>
                 <Grid container spacing={16}>
                     <Grid item xs={6}>
