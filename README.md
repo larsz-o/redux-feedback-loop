@@ -10,6 +10,7 @@ A React.js app for rating daily meals. Keep track of your dinners and remember w
 * Express
 * Material UI
 * PostgreSQL
+* Moment.js
 
 
 ## Getting Started
