@@ -26,6 +26,7 @@ textarea{
   height: 150px; 
   margin: 10px;
   font-size: 16px; 
+  padding: 10px; 
 }
 .slider {
   outline: none;
