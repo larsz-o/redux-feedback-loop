@@ -27,8 +27,8 @@ npm run client
 ```
 
 ## Screen Shot
-![ScreenShot of Dinner Diary] (https://github.com/larsz-o/redux-feedback-loop/blob/master/public/images/dinner.png)
-![ScreenShot of Dinner Diary] (https://github.com/larsz-o/redux-feedback-loop/blob/master/public/images/taste.png)
+![ScreenShot of Dinner Diary](https://github.com/larsz-o/redux-feedback-loop/blob/master/public/images/dinner.png)
+![ScreenShot of Dinner Diary](https://github.com/larsz-o/redux-feedback-loop/blob/master/public/images/taste.png)
 
 ## Completed Features
 - [x] Dinner Diary collects user's ratings (on a scale from 0-10) on taste, texture, creativity, and nutrition of each meal and allows users to submit comments. 
