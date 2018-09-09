@@ -1,6 +1,7 @@
 import React, {Component} from 'react'; 
 import {connect} from 'react-redux'; 
 import { Typography, Button, Input, FormControl} from '@material-ui/core';
+import MobileStepper from '@material-ui/core/MobileStepper';
 
 class HomeView extends Component {
     constructor(){
@@ -34,7 +35,6 @@ class HomeView extends Component {
                     <Input onChange={this.handleNameChange} required/><br/><br/>    
                     <Button variant="contained" color="secondary" onClick={this.submitMeal}>Submit</Button>
                 </FormControl>
-               
             </div>
         );
     }
