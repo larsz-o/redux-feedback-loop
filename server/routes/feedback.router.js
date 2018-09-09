@@ -15,27 +15,38 @@ router.post('/', (req, res) => {
     })
 });
 
-// Feedback GET routes
+// Feedback GET route
 router.get('/', (req, res) => {
     const query = `SELECT * FROM "feedback";`; 
     pool.query(query).then((results) => {
-        console.log(results.rows);
         res.send(results.rows)
     }).catch((error) => {
         console.log('Error getting feedback', error);
         res.sendStatus(500); 
     })
 }); 
-router.get('/totals', (req, res) => {
-    const query = `SELECT COALESCE ("taste") + ("texture") + ("creativity") + ("nutrition") AS "total" FROM "feedback";`; 
-    pool.query(query).then((results) => {
-        console.log(results.rows);
-        res.send(results.rows)
+
+//Feedback DELETE route
+router.delete('/:id', (req, res) => {
+    const query = `DELETE FROM "feedback" WHERE "id" = $1;`; 
+    pool.query(query, [req.params.id]).then((results) => {
+        res.sendStatus(200);
     }).catch((error) => {
-        console.log('Error getting feedback', error);
+        console.log('Error deleting feedback', error);
         res.sendStatus(500); 
     })
 }); 
-// gets the sum of each rating to display in the results table as an overall rating
+
+//Feedback PUT route
+router.put('/:id', (req, res) => {
+    const id = req.params.id; 
+    const query = `UPDATE "feedback" SET flagged = NOT flagged WHERE "id" = $1;`;
+    pool.query(query, [id]).then((results) => {
+        res.sendStatus(200);
+    }).catch((error) => {
+        console.log('Error editing entry', error);
+        res.sendStatus(500);
+    })
+})
 
 module.exports = router;

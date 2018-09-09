@@ -1,6 +1,6 @@
 import React, {Component} from 'react'; 
 import {connect} from 'react-redux'; 
-import {Button, Typography, FormControl, Input} from '@material-ui/core';
+import {Button, Typography} from '@material-ui/core';
 
 class CreativityView extends Component {
     constructor(){

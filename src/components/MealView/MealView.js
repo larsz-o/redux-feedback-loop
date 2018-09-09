@@ -33,7 +33,7 @@ class MealView extends Component {
                 <Typography variant='display1' align='center' gutterBottom>Hi, {this.props.reduxStore.feedback.name}! 
                 What did you eat for dinner?</Typography>
                 <FormControl>
-                    <Input onChange={this.handleMealChange} required/>
+                    <Input onChange={this.handleMealChange} required/> <br/>
                     <Button variant="contained" color="primary" onClick={this.submitMeal}>Submit</Button>
                 </FormControl>
             
