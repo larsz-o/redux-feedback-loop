@@ -6,9 +6,7 @@ const port = process.env.PORT || 5000;
 /** ---------- MIDDLEWARE ---------- **/
 app.use(bodyParser.json()); // needed for angular requests
 app.use(bodyParser.urlencoded({extended: true}));
-if (process.env.NODE_ENV === 'production') {
-	app.use(express.static('build'));
-}
+app.use(express.static('build'));
 
 /** ---------- EXPRESS ROUTES ---------- **/
 const feedbackRouter = require('./routes/feedback.router.js'); 
