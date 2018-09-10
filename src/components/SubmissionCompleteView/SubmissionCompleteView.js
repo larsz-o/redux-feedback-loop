@@ -1,7 +1,7 @@
 import React, {Component} from 'react'; 
 import axios from 'axios'; 
 import {connect} from 'react-redux'; 
-import { Typography, Button } from '@material-ui/core';
+import { Typography, Button, Grid } from '@material-ui/core';
 
 class SubmissionView extends Component {
     componentDidMount(){
@@ -28,11 +28,18 @@ class SubmissionView extends Component {
     }
     render(){
         return(
-            <div className="form-view">
+            <Grid>
+                <Grid item xs={6}>
+                <div className="form-view">
             <Typography variant="headline" align= "center" gutterBottom>Thanks for rating your dinner!<br/>
             A complete log of all ratings can be found on the <Button variant="fab" color="secondary" href="/#/results">Ratings</Button> page</Typography>
-            <Button variant="contained" color="primary" onClick={this.returnHome}>Return Home</Button>
             </div>
+            </Grid>
+            <Grid item xs={6}>
+            <Button variant="contained" color="primary" onClick={this.returnHome}>Return Home</Button>
+                </Grid>
+            </Grid>
+           
         );
     }
 }

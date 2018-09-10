@@ -1,6 +1,6 @@
 import React, {Component} from 'react'; 
 import {connect} from 'react-redux'; 
-import {FormControl, Typography, Input, Button, Grid} from '@material-ui/core'; 
+import {FormControl, Typography, Button, Grid} from '@material-ui/core'; 
 
 class CommentsView extends Component {
     constructor(){

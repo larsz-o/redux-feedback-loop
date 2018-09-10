@@ -1,6 +1,6 @@
 import React, {Component} from 'react'; 
 import {connect} from 'react-redux'; 
-import { Typography, Button, Input, FormControl} from '@material-ui/core';
+import { Typography, Button, Input, FormControl, Grid} from '@material-ui/core';
 
 class HomeView extends Component {
     constructor(){
@@ -29,11 +29,15 @@ class HomeView extends Component {
         console.log(this.state); 
         return(
             <div className="form-view">
+             <Grid container spacing={16}>
+             <Grid item xs={12}>
                 <Typography variant='display1' align='center' gutterBottom>Hello! What's your name?</Typography>
-                <FormControl >
+                <FormControl>
                     <Input onChange={this.handleNameChange} required/><br/><br/>    
                     <Button variant="contained" color="secondary" onClick={this.submitMeal}>Submit</Button>
                 </FormControl>
+                </Grid>
+                </Grid>
             </div>
         );
     }

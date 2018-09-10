@@ -27,13 +27,15 @@ class TasteView extends Component {
     render(){
         return(
             <div className="form-view">
+            <Grid container spacing={16}>
+            <Grid item xs={12}>
                 <Typography variant='display1' align='center' gutterBottom>How was the <span className="emphasis-word">taste </span>of {this.props.reduxStore.feedback.meal}?</Typography>
                     <form>
                     <label>Terrible</label> <input value={this.state.taste} onChange={this.handleRangeChange} className="slider" type="range" min="0" max="10" required/><label> Amazing</label>
                     </form><br/>
                 <Typography variant='body2' align='center' gutterBottomRating>Rating: {this.state.taste}</Typography> <br/>
-               <Grid container spacing={16}>
-                    <Grid item xs={6}>
+                    </Grid>
+                <Grid item xs={6}>
                     <Button variant="contained" onClick={this.navigateBack}>Back</Button>
                     </Grid>
                     <Grid item xs={6}>

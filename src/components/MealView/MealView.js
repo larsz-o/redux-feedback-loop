@@ -32,12 +32,14 @@ class MealView extends Component {
         console.log(this.state); 
         return(
             <div className="form-view">
+             <Grid container spacing={16}>
+             <Grid item xs={12}>
                 <Typography variant='display1' align='center' gutterBottom>Hi, {this.props.reduxStore.feedback.name}! 
                 What did you eat for dinner?</Typography>
                 <FormControl>
                     <Input onChange={this.handleMealChange} required/> <br/>
                 </FormControl>
-                <Grid container spacing={16}>
+                </Grid>
                     <Grid item xs={6}>
                     <Button variant="contained" onClick={this.navigateBack}>Back</Button>
                     </Grid>

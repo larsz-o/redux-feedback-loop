@@ -26,12 +26,14 @@ class TextureView extends Component {
     render(){
         return(
             <div className="form-view">
+            <Grid container spacing={16}>
+            <Grid item xs={12}>
             <Typography variant="display1" align='center' gutterBottom>How was the <span className="emphasis-word">texture </span>of {this.props.reduxStore.feedback.meal}?</Typography>
             <form>
                 <label>Terrible</label> <input value={this.state.texture} onChange={this.handleRangeChange} className="slider" type="range" min="0" max="10" required/><label> Amazing</label>
             </form> <br/>
             <Typography variant="body2" align='center' gutterBottom>Rating: {this.state.texture}</Typography> <br/>
-            <Grid container spacing={16}>
+            </Grid>
                     <Grid item xs={6}>
                     <Button variant="contained" onClick={this.navigateBack}>Back</Button>
                     </Grid>
