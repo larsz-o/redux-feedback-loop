@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import TableRowComponent from '../TableRowComponent/TableRowComponent.js';
-import {Table, TableBody, TableHead, TableSortLabel, TableCell, TableRow} from '@material-ui/core'; 
+import {Table, TableBody, TableHead, TableSortLabel, TableCell, TableRow, Grid} from '@material-ui/core'; 
 import axios from 'axios'; 
 
 const toggleOrder = {toggle: false}; 
@@ -138,7 +138,9 @@ class TableComponent extends Component {
     } 
     render(){
         return(
-        <Table>
+        <Grid>
+            <GridItem xs={12}>
+            <Table>
                 <TableHead>
                     <TableRow>
                         <TableCell><TableSortLabel onClick={this.sortByName}>Name</TableSortLabel></TableCell>
@@ -162,6 +164,9 @@ class TableComponent extends Component {
                     })} 
                 </TableBody>
             </Table>
+            </GridItem>
+        </Grid>
+        
         );
     }
 }
