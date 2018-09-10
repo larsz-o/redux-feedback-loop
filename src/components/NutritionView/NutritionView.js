@@ -6,7 +6,7 @@ class NutritionView extends Component {
     constructor(){
         super();
     this.state = {
-            nutrition: 10,
+            nutrition: '',
         }
     }
  

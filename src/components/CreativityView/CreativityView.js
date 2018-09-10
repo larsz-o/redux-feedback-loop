@@ -6,7 +6,7 @@ class CreativityView extends Component {
     constructor(){
         super();
     this.state = {
-            creativity: 10,
+            creativity: '',
         }
     }
  

@@ -6,7 +6,7 @@ class TasteView extends Component {
     constructor(){
         super();
     this.state = {
-            taste: 10,
+            taste: '',
         }
     }
  

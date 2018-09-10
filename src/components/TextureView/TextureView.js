@@ -6,7 +6,7 @@ class TextureView extends Component {
     constructor(){
         super();
     this.state = {
-            texture: 10,
+            texture: '',
         }
     }
  
