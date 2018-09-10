@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import TableRowComponent from '../TableRowComponent/TableRowComponent.js';
-import {Table, TableBody, TableHead, TableSortLabel, TableCell, TableRow, Grid} from '@material-ui/core'; 
+import {Table, TableBody, TableHead, TableSortLabel, TableCell, TableRow, Grid, GridItem} from '@material-ui/core'; 
 import axios from 'axios'; 
 
 const toggleOrder = {toggle: false}; 
