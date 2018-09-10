@@ -138,8 +138,7 @@ class TableComponent extends Component {
     } 
     render(){
         return(
-        <Grid>
-            <Grid item xs={12}>
+        <Grid container spacing={16} xs={12}>
             <Table>
                 <TableHead>
                     <TableRow>
@@ -165,7 +164,6 @@ class TableComponent extends Component {
                 </TableBody>
             </Table>
             </Grid>
-        </Grid>
         
         );
     }
