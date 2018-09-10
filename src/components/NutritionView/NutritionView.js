@@ -6,7 +6,7 @@ class NutritionView extends Component {
     constructor(){
         super();
     this.state = {
-            nutrition: '',
+            nutrition: 0,
         }
     }
  
@@ -28,7 +28,7 @@ class NutritionView extends Component {
             <div className="form-view">
             <Typography variant='display1' align='center' gutterBottom>How <span className="emphasis-word">nutritious </span>was your meal of {this.props.reduxStore.feedback.meal}?</Typography>
                 <form>
-                    <label>Terrible</label> <input onChange={this.handleRangeChange} className="slider" type="range" min="0" max="10"/><label> Amazing</label>
+                    <label>Terrible</label> <input value={this.state.nutrition} onChange={this.handleRangeChange} className="slider" type="range" min="0" max="10"/><label> Amazing</label>
                 </form> <br/>
                 <Typography variant='body2' align='center' gutterBottom>Rating: {this.state.nutrition}</Typography> <br/>
                 <Grid container spacing={16}>
