@@ -22,7 +22,7 @@ class App extends Component {
         <header className="App-header">
         <Typography variant="display3" class="header-text" gutterBottom>Dinner Diary</Typography>
           <Grid container spacing={40}>
-          <Grid item sm={12}>
+          <Grid item sm={8}>
             <Button href="/" color="primary" variant="contained" onClick={this.goHome}>Home</Button><span>  </span>
             <Button href="/#/results" color="primary" variant="contained" onClick={this.goToResults}>Ratings Log</Button>
             </Grid>
