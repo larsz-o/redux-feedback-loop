@@ -33,10 +33,12 @@ class CommentsView extends Component {
         return(
             <div className="form-view">
                 <Typography variant="display1" align="center" gutterBottom>Do you have any comments about today's dinner of {this.props.reduxStore.feedback.meal}?</Typography>
+                <Grid container spacing={16}>
+                <Grid item xs={12}>
                 <FormControl>
                 <textarea onChange={this.handleTextChange}/><br/>
                 </FormControl>
-                <Grid container spacing={16}>
+                </Grid>
                     <Grid item xs={6}>
                     <Button variant="contained" onClick={this.navigateBack}>Back</Button>
                     </Grid>
