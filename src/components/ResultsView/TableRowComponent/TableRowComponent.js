@@ -36,16 +36,18 @@ class TableBodyComponent extends Component {
         })
     }
     handleDelete = () => { 
-        let id = this.props.dinner.id;
-        axios({
-            method: 'DELETE', 
-            url: '/feedback/' + id,
-        }).then((response)=>{
-            this.getCurrentRatingData();
-        }).catch((error) => {
-            alert('Error deleting!');
-            console.log('Error deleting item', error); 
-        })
+        if (window.confirm(`Are you sure you want to delete ${this.props.dinner.meal}?`)){
+            let id = this.props.dinner.id;
+            axios({
+                method: 'DELETE', 
+                url: '/feedback/' + id,
+            }).then((response)=>{
+                this.getCurrentRatingData();
+            }).catch((error) => {
+                alert('Error deleting!');
+                console.log('Error deleting item', error); 
+            })
+        }
     } 
   
 render(){
