@@ -22,8 +22,8 @@ label {
 }
 textarea{
   border-radius: 10px; 
-  width: 400px; 
-  height: 150px; 
+  max-width: 400px; 
+  max-height: 150px; 
   margin: 10px;
   font-size: 16px; 
   padding: 10px; 
