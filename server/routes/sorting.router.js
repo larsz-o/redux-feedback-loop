@@ -129,11 +129,11 @@ router.put('/overall', (req, res) => {
     })
     }
 }); 
-router.put('/name', (req, res) => {
+router.put('/', (req, res) => {
     let data = req.body.toggle;  
     if (data) {
         let orientation = 'DESC';
-        const query = `SELECT * FROM "feedback" ORDER BY "name" ${orientation};`; 
+        const query = `SELECT * FROM "feedback" ORDER BY ${req.query.type} ${orientation};`; 
     pool.query(query).then((results) => {
         res.send(results.rows)
     }).catch((error) => {
@@ -141,7 +141,7 @@ router.put('/name', (req, res) => {
         res.sendStatus(500); 
     })} else if (data == false){
        let orientation = 'ASC'; 
-        const query = `SELECT * FROM "feedback" ORDER BY "name" ${orientation};`; 
+        const query = `SELECT * FROM "feedback" ORDER BY ${req.query.type} ${orientation};`; 
     pool.query(query).then((results) => {
         res.send(results.rows)
     }).catch((error) => {

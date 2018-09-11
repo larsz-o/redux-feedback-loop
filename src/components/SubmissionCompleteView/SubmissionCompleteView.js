@@ -32,7 +32,7 @@ class SubmissionView extends Component {
                 <Grid item xs={6}>
                 <div className="form-view">
             <Typography variant="headline" align= "center" gutterBottom>Thanks for rating your dinner!<br/>
-            A complete log of all ratings can be found on the <Button variant="fab" color="secondary" href="/#/results">Ratings</Button> page</Typography>
+            A complete log of all ratings can be found on the <Button variant="contained" color="secondary" href="/#/results">Ratings</Button> page</Typography>
             </div>
             </Grid>
             <Grid item xs={6}>
