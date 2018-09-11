@@ -47,10 +47,6 @@ class TableComponent extends Component {
                         <TableCell><TableSortLabel onClick={()=> this.sortBy("name")}>Name</TableSortLabel></TableCell>
                         <TableCell><TableSortLabel onClick={()=> this.sortBy("meal")}>Meal</TableSortLabel></TableCell>
                         <TableCell><TableSortLabel onClick={()=> this.sortBy("date")}>Date</TableSortLabel></TableCell>
-                        <TableCell><TableSortLabel onClick={()=> this.sortBy("taste")}>Taste</TableSortLabel></TableCell>
-                        <TableCell><TableSortLabel onClick={()=> this.sortBy("texture")}>Texture</TableSortLabel></TableCell>
-                        <TableCell><TableSortLabel onClick={()=> this.sortBy("creativity")}>Creativity</TableSortLabel></TableCell>
-                        <TableCell><TableSortLabel onClick={()=> this.sortBy("nutrition")}>Nutrition</TableSortLabel></TableCell>
                         <TableCell>Comments</TableCell>
                         <TableCell><TableSortLabel onClick={()=> this.sortBy("overall_rating")}>Overall Rating</TableSortLabel></TableCell>
                         <TableCell>Flag for Review</TableCell>

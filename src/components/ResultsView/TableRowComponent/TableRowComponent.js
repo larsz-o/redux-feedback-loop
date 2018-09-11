@@ -56,10 +56,6 @@ render(){
                     <TableCell>{this.props.dinner.name}</TableCell>
                     <TableCell>{this.props.dinner.meal}</TableCell>
                     <TableCell>{moment(this.props.dinner.date).format('MM/DD/YYYY')}</TableCell>
-                    <TableCell>{this.props.dinner.taste}</TableCell>
-                    <TableCell>{this.props.dinner.texture}</TableCell>
-                    <TableCell>{this.props.dinner.creativity}</TableCell>
-                    <TableCell>{this.props.dinner.nutrition}</TableCell>
                     <TableCell>{this.props.dinner.comments}</TableCell>
                     <TableCell>{this.props.dinner.overall_rating}</TableCell>
                     <TableCell><img src="../../../../images/flag.svg" alt="feedback required icon" onClick={this.flagFeedback}></img></TableCell>
