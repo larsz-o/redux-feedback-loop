@@ -18,18 +18,18 @@ const feedback = (state = blankFeedback, action ) => {
             ...state, 
             name: action.payload
         };
-    } else if(action.type === 'ADD_MEAL'){
+    } else if(action.type === 'ADD_LESSON'){
         return {
              ...state,
              meal: action.payload,
          }
-     } else if (action.type  === 'TASTE_RATING'){
+     } else if (action.type  === 'DIFFICULTY_RATING'){
       return  {
             ...state,
             taste: action.payload,
             overall_rating: Number(state.overall_rating) + Number(action.payload)
         }
-    } else if (action.type === 'TEXTURE_RATING'){
+    } else if (action.type === 'LEARNING_RATING'){
         return {
             ...state,
             texture: action.payload,
@@ -41,7 +41,7 @@ const feedback = (state = blankFeedback, action ) => {
             creativity: action.payload,
             overall_rating: Number(state.overall_rating) + Number(action.payload)
         }
-    } else if (action.type === 'NUTRITION_RATING'){
+    } else if (action.type === 'COLLABORATION_RATING'){
        return {
             ...state,
             nutrition: action.payload,
@@ -63,8 +63,15 @@ const mealFeedbackHistory = (state = [], action ) => {
     }
     return state; 
 }
-
+const home = (state = true, action) => {
+    if (action.type === 'NAV_TO_FEEDBACK'){
+        return false;
+    } else {
+        return state;
+    }
+}
 export default combineReducers({
     feedback,  
-    mealFeedbackHistory
+    mealFeedbackHistory, 
+    home
 }); 
