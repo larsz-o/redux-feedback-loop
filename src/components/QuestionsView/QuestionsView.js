@@ -8,7 +8,7 @@ class QuestionsView extends Component {
         super();
         this.state = {
             open: false,
-            image: '',
+            image: {image: '', video: ''},
             selected: '',
             questions: [],
             input1: '1. What is the functionality of',
@@ -23,7 +23,7 @@ class QuestionsView extends Component {
         this.setState({
             ...this.state,
             open: false,
-            image: ''
+            image: {image: '', video: ''}
         })
     }
     handleChangeFor = (event, property) => {
@@ -53,7 +53,7 @@ class QuestionsView extends Component {
                         <h2>Your Design Sketch</h2>
                         <div className="flex-box flex-evenly">
                             <div className="thumbnail column-6">
-                                <img onClick={() => this.setState({ ...this.state, open: true, image: this.props.reduxStore.feedback.lesson })} src={require(`../LessonView/${this.props.reduxStore.feedback.lesson}`)} alt="your lesson" />
+                                <img onClick={() => this.setState({ ...this.state, open: true, image: this.props.reduxStore.feedback.lesson })} src={require(`../LessonView/${this.props.reduxStore.feedback.lesson.image}`)} alt="your lesson" />
                             </div>
                         </div>
                         <Dialog open={this.state.open} onClose={this.handleClose}>

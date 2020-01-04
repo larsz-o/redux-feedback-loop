@@ -11,15 +11,16 @@ class RatingsView extends Component {
             creativity: 0,
             usability: 0,
             overall: 0,
-            image: '',
-            open: false
+            image: {image: '', video: ''},
+            open: false,
+            showVideo: true
         }
     }
     handleClose = () => {
         this.setState({
             ...this.state,
             open: false, 
-            image: ''
+            image: {image: '', video: ''}
         })
     }
     handleRangeChangeFor = (event, property) => {
@@ -53,15 +54,17 @@ class RatingsView extends Component {
                         <h2>Your Design Sketch</h2>
                         <div className="flex-box flex-evenly">
                         <div className="thumbnail column-6">
-                            <img onClick={()=>this.setState({...this.state, open: true, image: this.props.reduxStore.feedback.lesson})} src={require(`../LessonView/${this.props.reduxStore.feedback.lesson}`)} alt="your lesson"/>
+                            <img onClick={()=>this.setState({...this.state, open: true, image: this.props.reduxStore.feedback.lesson})} src={require(`../LessonView/${this.props.reduxStore.feedback.lesson.image}`)} alt="your lesson"/>
                         </div>
                         </div>
-                     <Dialog open={this.state.open} onClose={this.handleClose}>
-                        <div className="dialog">
-                            <div className="flex-box flex-end close-icon" onClick={this.handleClose}>x</div>
-                            {this.state.image.length > 0 && <img src={require(`../LessonView/${this.state.image}`)} className="full-img" alt="enlarged"/>}
-                        </div>
-                     </Dialog>
+                        <Dialog open={this.state.open} onClose={this.handleClose}>
+                            <div className="dialog">
+                                <div className="flex-box flex-end close-icon" onClick={this.handleClose}>x</div>
+                                {this.state.videoShow ? (<div><h3>Walk-Through Demo</h3>
+                                    <iframe width="560" height="315" src="https://www.youtube.com/embed/HIj8SOE-jGo" frameBorder="0" title="walkthrough" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" ></iframe>
+                                    <p className="plain-link" onClick={() => this.setState({ ...this.state, videoShow: false })}>Switch to photo view</p></div>) : (<div><h3>Example photo</h3><img className="full-img" src={require(`../LessonView/${this.props.reduxStore.feedback.lesson.image}`)} alt="demo" /><p className="plain-link" onClick={() => this.setState({ ...this.state, videoShow: true })}>Switch to video view</p></div>)}
+                            </div>
+                        </Dialog>
                     </div>
                         <div className="instructions column-6  text-left">
                             <h4>Rate your design</h4>

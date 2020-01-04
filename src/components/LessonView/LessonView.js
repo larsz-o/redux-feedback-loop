@@ -32,7 +32,6 @@ class LessonView extends Component {
         return (
             <div className="main">
                 <Header className={this.props.reduxStore.home} />
-                {JSON.stringify(this.state)}
                 <div className="flex-box flex-evenly form-zone animate-pop-in">
                     <div className="column-6">
                         <h2>Design Sketches Assignment Prompt</h2>
