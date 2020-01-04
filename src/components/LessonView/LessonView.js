@@ -6,7 +6,7 @@ class LessonView extends Component {
     constructor() {
         super();
         this.state = {
-            examples: [{image: 'image1.png', video: 'https://www.youtube.com/embed/HIj8SOE-jGo'}, {image:'image2.png', video: ''}],
+            examples: [{image: 'image1.png', video: 'https://www.youtube.com/embed/HIj8SOE-jGo'}, {image:'image2.png', video: 'https://www.youtube.com/embed/8pD34rKoSEc'}],
             open: false,
             image: {image: 'image1.png', video: 'https://www.youtube.com/embed/HIj8SOE-jGo'},
             viewDesigns: false,
