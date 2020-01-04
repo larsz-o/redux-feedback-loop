@@ -30,11 +30,7 @@ class NegativeView extends Component {
         });
     }
     navTo = () => {
-        if(this.props.reduxStore.feedback.negative.length === 3){
-            this.props.history.push('/questions');
-        } else {
-            alert('Please submit three critical comments.');
-        }
+        this.props.history.push('/questions');
     }
     navigateBack = () => {
         this.props.history.push('/positive');
@@ -42,14 +38,13 @@ class NegativeView extends Component {
     sendValueToRedux = () => {
         const action = { type: 'SUBMIT_NEGATIVE', payload: [this.state.input1, this.state.input2, this.state.input3] };
         this.props.dispatch(action);
-       this.navTo();
-       
+        this.navTo();  
     }
 
     render() {
         return (
             <div className="main">
-                <Header />
+                <Header className={this.props.reduxStore.home}/>
                 <div className="flex-box flex-evenly form-zone animate-pop-in">
                     <div className="column-4">
                         <h2>Your Design Sketch</h2>

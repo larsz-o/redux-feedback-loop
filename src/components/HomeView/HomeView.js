@@ -35,7 +35,15 @@ class HomeView extends Component {
                     </div>
                     <div className="instructions column-6 text-left">
                         <p>Critique is an important part of the design process and it will be central to your career as a UX designer. Later in the week, you will be critiquing your classmates' work in our Moodle discussion forum. While we all have plenty of experience giving and receiving feedback, we aren't always trained to give constructive, direct feedback about our peers' work. For this reason, we will be practicing giving feedback before we jump into the critique assignment.</p>
-                        <p>In this activity, you will practice giving constructive feedback to a sample project on this website. Your responses will be recorded, so please be collegial. The goal is not to find every error, but to begin to get comfortable with the practice of giving feedback. This activity should take you about 30 minutes to complete.</p>
+                        <p>In this activity, you will practice giving constructive feedback to a sample project on this website. Please be collegial. The goal is not to find every error, but to begin to get comfortable with the practice of giving feedback. This activity should take you about 15-20 minutes to complete.</p>
+                        <p>By the end of this activity, you should be able:</p>
+                        <ul>
+                            <li>understand the components of a good critique</li>
+                            <li>formulate positive and critical feedback about a sample peer's work</li>
+                            <li>pose questions about a sample peer's work</li>
+                            <li>evaluate the clarity, creativity, usability, and overall quality of a peer's work, with the aim to help them iterative improve their designs</li>
+                        </ul>
+                       
                         <p>To get started, please enter your name.</p>
                         <div className="flex-box flex-center">
                             <FormControl>

@@ -33,8 +33,14 @@ class RatingsView extends Component {
         this.props.history.push('/questions');
     }
     sendValueToRedux = () => {
-        const action = {type: 'NUTRITION_RATING', payload: this.state.nutrition}; 
+        let action = {type: 'USABILITY_RATING', payload: this.state.usability}; 
         this.props.dispatch(action); 
+        action = {type: 'CREATIVITY_RATING', payload: this.state.creativity}; 
+        this.props.dispatch(action);
+        action = {type: 'CLARITY_RATING', payload: this.state.clarity}; 
+        this.props.dispatch(action);
+        action = {type: 'OVERALL_RATING', payload: this.state.overall}; 
+        this.props.dispatch(action);
         this.props.history.push('/review');
     }
     render(){

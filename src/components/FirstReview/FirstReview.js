@@ -31,11 +31,7 @@ class TasteView extends Component {
         });
     }
     navTo = () => {
-        if (this.props.reduxStore.feedback.positive.length === 3 && this.props.reduxStore.feedback.lesson.length > 1) {
-            this.props.history.push('/critical');
-        } else {
-            alert('Please choose a design and submit three positive comments.');
-        }
+        this.props.history.push('/critical');
     }
     navigateBack = () => {
         this.props.history.push('/lesson');
@@ -61,7 +57,8 @@ class TasteView extends Component {
                 <div className="flex-box flex-evenly form-zone animate-pop-in">
                     <div className="column-4">
                         <h2>First impressions</h2>
-                        <p>Choose one design sketch to focus on for the duration of this activity.</p>
+                        <p>Click on the thumbnail for each project to watch a student walk through their design. You will be doing a similar walk-through in your assignment later this week.</p>
+                        <p>Then, select one of the two projects to provide feedback on for the duration of this activity.</p>
                         <div className="flex-box flex-evenly">
                         {this.state.examples.map((ex, i) => {
                             return(
@@ -80,7 +77,7 @@ class TasteView extends Component {
                      </Dialog>
 
                     </div>
-                        <div className="instructions column-6  text-left">
+                        {this.state.selected.length > 0 && <div className="instructions column-6  text-left">
                             <h4>Describe what you like about this design</h4>
                             <p>It is easy to jump right into critical comments when critiquing your peers' work, but it helps the designer who is being critiqued and you - the critiquer - to start with some positive feedback.</p>
                             <p>In the input fields below, name three things that are working well in your chosen design sketch. To help get you going, I've created a few sentence starters for you. Feel free to use them or start from scratch.</p>
@@ -94,7 +91,7 @@ class TasteView extends Component {
                             </div>
                             
                            
-                        </div>
+                        </div>}
                     </div>
             
 

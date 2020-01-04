@@ -65,12 +65,6 @@ const feedback = (state = blankFeedback, action ) => {
     }
     return state; 
 }
-const feedbackHistory = (state = [], action ) => {
-    if (action.type === 'SET_HISTORY'){
-       return action.payload;
-    }
-    return state; 
-}
 const home = (state = true, action) => {
     if (action.type === 'NAV_TO_FEEDBACK'){
         return false;
@@ -80,6 +74,5 @@ const home = (state = true, action) => {
 }
 export default combineReducers({
     feedback,  
-    feedbackHistory, 
     home
 }); 

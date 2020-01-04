@@ -32,11 +32,7 @@ class QuestionsView extends Component {
         });
     }
     navTo = () => {
-        if(this.props.reduxStore.feedback.questions.length === 3){
             this.props.history.push('/ratings');
-        } else {
-            alert('Please submit three questions.');
-        }
     }
     navigateBack = () => {
         this.props.history.push('/ratings');
