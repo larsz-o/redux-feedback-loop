@@ -10,7 +10,7 @@ class LessonView extends Component {
             open: false,
             image: {image: 'image1.png', video: 'https://www.youtube.com/embed/HIj8SOE-jGo'},
             viewDesigns: false,
-            videoShow: true
+            videoShow: false
         }
     }
     handleClose = () => {
@@ -35,7 +35,8 @@ class LessonView extends Component {
                 <div className="flex-box flex-evenly form-zone animate-pop-in">
                     <div className="column-6">
                         <h2>Design Sketches Assignment Prompt</h2>
-                        <p>Read through the prompt for the Design Sketches assignment. When you are done reviewing the prompt, click to view the design examples (the work product for this prompt).</p>
+                        <p>Read through the prompt for the Design Sketches assignment. 
+                            When you are done reviewing the prompt, click to view the design examples (the work product for this prompt).</p>
                         <div className="instructions text-left">
                             <h4>Prompt</h4>
                             <p>Every creative process leads to sketches because making something visual is the best way to get ideas down and to communicate to others. There is no need to worry about your artistic ability here; anyone can draw. There is no real right or wrong as long as you are using this as an active thinking exercise. Everyone needs to find an ideation process that works for them and the best way to learn yours is to practice.</p>
@@ -49,7 +50,7 @@ class LessonView extends Component {
                
                 {this.state.viewDesigns && <div className="flex-box flex-evenly column-4">
                 <div><h2>Design Sketches</h2>
-                <p>Click each thumbnail to view the design sketch in detail. When you are done reviewing, navigate to the next page, where you will be able to review the sketches in greater detail.</p></div>
+                <p>Click each thumbnail to view the design sketch in detail. When you are done reviewing, navigate to the next page.</p></div>
                     {this.state.examples.map((ex, i) => {
                         return (
                             <div className="thumbnail" key={i}>
