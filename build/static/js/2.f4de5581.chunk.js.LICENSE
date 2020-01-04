@@ -4,15 +4,15 @@
   http://jedwatson.github.io/classnames
 */
 
+/*!
+ * Programatically add the following
+ */
+
 /*
 object-assign
 (c) Sindre Sorhus
 @license MIT
 */
-
-/*!
- * Programatically add the following
- */
 
 /** @license React v16.5.0
  * react.production.min.js

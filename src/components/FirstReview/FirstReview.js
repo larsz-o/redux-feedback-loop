@@ -7,14 +7,14 @@ class TasteView extends Component {
     constructor() {
         super();
         this.state = {
-            examples: ['image1.png', 'image2.png'],
+            examples: [{image: 'image1.png', video: 'https://www.youtube.com/embed/HIj8SOE-jGo'}, {image:'image2.png', video: ''}],
             open: false,
             image: '',
             selected: '', 
             input1: '1. What really impressed me was',
             input2: '2. This sketch shows',
-            input3: '3. The strongest aspect of this design is'
-            
+            input3: '3. The strongest aspect of this design is',
+            videoShow: true
         }
     }
     handleClose = () => {
@@ -63,17 +63,19 @@ class TasteView extends Component {
                         {this.state.examples.map((ex, i) => {
                             return(
                                 <div className="thumbnail" key={i}>
-                                    {this.state.selected === ex ? ( <div className="flex-col selected-image"><img src={require(`../LessonView/${ex}`)} onClick={()=>this.setState({...this.state, open: true, image: ex})} alt={`example-work-${i+1}`}/><Button onClick={()=>this.selectProject('')}>undo</Button></div>):(<div className="flex-col"><img src={require(`../LessonView/${ex}`)} onClick={()=>this.setState({...this.state, open: true, image: ex})} alt={`example-work-${i+1}`}/>
+                                    {this.state.selected === ex ? ( <div className="flex-col selected-image"><img src={require(`../LessonView/${ex.image}`)} onClick={()=>this.setState({...this.state, open: true, image: ex})} alt={`example-work-${i+1}`}/><Button onClick={()=>this.selectProject('')}>undo</Button></div>):(<div className="flex-col"><img src={require(`../LessonView/${ex.image}`)} onClick={()=>this.setState({...this.state, open: true, image: ex})} alt={`example-work-${i+1}`}/>
                                    <Button color="secondary" onClick={()=>this.selectProject(ex)}>select</Button></div>)}
                                 </div>
                             )
                         })}
                         </div>
-                     <Dialog open={this.state.open} onClose={this.handleClose}>
-                        <div className="dialog">
-                            <div className="flex-box flex-end close-icon" onClick={this.handleClose}>x</div>
-                            {this.state.image.length > 0 && <img src={require(`../LessonView/${this.state.image}`)}  className="full-img" alt="enlarged"/>}
-                        </div>
+                        <Dialog open={this.state.open} onClose={this.handleClose}>
+                    <div className="dialog">
+                        <div className="flex-box flex-end close-icon" onClick={this.handleClose}>x</div>
+                        {this.state.videoShow ? (<div><h3>Walk-Through Demo</h3>
+                     <iframe width="560" height="315" src="https://www.youtube.com/embed/HIj8SOE-jGo" frameBorder="0" title="walkthrough" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" ></iframe>
+        <p className="plain-link" onClick={()=>this.setState({...this.state, videoShow: false})}>Switch to photo view</p></div>):(<div><h3>Example photo</h3><img className="full-img" src={require(`../LessonView/${this.state.image.image}`)} alt="demo"/><p className="plain-link" onClick={()=>this.setState({...this.state, videoShow: true})}>Switch to video view</p></div>)}
+                    </div>
                      </Dialog>
 
                     </div>

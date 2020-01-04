@@ -12,7 +12,8 @@ class NegativeView extends Component {
             selected: '', 
             input1: '1. One problem I see',
             input2: '2. I am confused by',
-            input3: '3. I think a better choice would be'
+            input3: '3. I think a better choice would be',
+            videoShow: true
             
         }
     }
@@ -53,11 +54,13 @@ class NegativeView extends Component {
                             <img onClick={()=>this.setState({...this.state, open: true, image: this.props.reduxStore.feedback.lesson})} src={require(`../LessonView/${this.props.reduxStore.feedback.lesson}`)} alt="your lesson"/>
                         </div>
                         </div>
-                     <Dialog open={this.state.open} onClose={this.handleClose}>
-                        <div className="dialog">
-                            <div className="flex-box flex-end close-icon" onClick={this.handleClose}>x</div>
-                            {this.state.image.length > 0 && <img src={require(`../LessonView/${this.state.image}`)} className="full-img" alt="enlarged"/>}
-                        </div>
+                        <Dialog open={this.state.open} onClose={this.handleClose}>
+                    <div className="dialog">
+                        <div className="flex-box flex-end close-icon" onClick={this.handleClose}>x</div>
+                        {this.state.videoShow ? (<div><h3>Walk-Through Demo</h3>
+                     <iframe width="560" height="315" src="https://www.youtube.com/embed/HIj8SOE-jGo" frameBorder="0" title="walkthrough" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" ></iframe>
+        <p className="plain-link" onClick={()=>this.setState({...this.state, videoShow: false})}>Switch to photo view</p></div>):(<div><h3>Example photo</h3><img className="full-img" src={require(`../LessonView/${this.state.image.image}`)} alt="demo"/><p className="plain-link" onClick={()=>this.setState({...this.state, videoShow: true})}>Switch to video view</p></div>)}
+                    </div>
                      </Dialog>
                     </div>
                         <div className="instructions column-6  text-left">

@@ -102,6 +102,9 @@ label {
 .margin-top-15 {
   margin-top: 15px;
 }
+.plain-link {
+  cursor: pointer;
+}
 .results {
   padding: 5vh;
   background-color: white;
