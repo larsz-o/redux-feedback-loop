@@ -24,6 +24,9 @@ a:link {
 .center {
   text-align: center;
 }
+.card-icon {
+  height: 25px;
+}
 .close-icon {
   font-size: 1.1em;
   font-weight: 200;
@@ -37,6 +40,9 @@ a:link {
   display: flex; 
   flex-direction: row;
   flex-wrap: wrap;
+}
+.flex-between {
+  justify-content: space-between;
 }
 .flex-center {
   justify-content: center;
@@ -60,6 +66,9 @@ a:link {
   height: 25px;
   margin-left: 50px;
 }
+h4 {
+  font-weight: 300;
+}
 input {
   border: 0 solid transparent;
   border-bottom: 1px solid black;
@@ -75,9 +84,21 @@ input {
 }
 label {
   padding: 8px; 
+  font-family: monospace;
+  font-size: 1.1em;
 }
 .margin-top-15 {
   margin-top: 15px;
+}
+.results {
+  padding: 5vh;
+  background-color: white;
+  margin: 10px;
+  box-shadow: 2px 3px 4px rgba(115, 115, 115, .8);
+  font-weight: 300;
+}
+.results:hover {
+  box-shadow: 4px 6px 6px rgba(115, 115, 115, .8);
 }
 select {
   font-family: monospace;
@@ -94,6 +115,12 @@ padding: 10px;
   -webkit-transition: .2s; /* 0.2 seconds transition on hover */
   transition: opacity .2s;
   cursor: pointer;
+  display: inline;
+}
+.slider-div {
+  padding: 10px;
+  background-color: rgba(115, 115, 115, .1);
+  margin: 5px;
 }
 .emphasis-word{
   font-weight: bold; 

@@ -2,11 +2,14 @@ import {combineReducers} from 'redux';
 
 let blankFeedback = {
     name: '', 
-    lesson: '',
+    lesson: 'image1.png',
     positive: [],
     negative: [],
     questions: [],
-    overall_rating: 0, 
+    clarity: 0,
+    creativity: 0,
+    usability: 0,
+    overall: 0, 
     
 };
 const feedback = (state = blankFeedback, action ) => {
@@ -24,43 +27,45 @@ const feedback = (state = blankFeedback, action ) => {
          else if (action.type === 'SUBMIT_POSITIVE'){
             return {
                 ...state, 
-                questions: action.payload,
+                positive: action.payload,
          }
-     } else if (action.type  === 'DIFFICULTY_RATING'){
+        }
+         else if (action.type === 'SUBMIT_NEGATIVE'){
+            return {
+                ...state, 
+                negative: action.payload,
+         }
+     } else if (action.type  === 'SUBMIT_QUESTIONS'){
       return  {
             ...state,
-            taste: action.payload,
-            overall_rating: Number(state.overall_rating) + Number(action.payload)
+            questions: action.payload,
         }
-    } else if (action.type === 'LEARNING_RATING'){
+    } else if (action.type === 'USABILITY_RATING'){
         return {
             ...state,
-            texture: action.payload,
-            overall_rating: Number(state.overall_rating) + Number(action.payload)
+            usability: action.payload,
         }
     } else if (action.type === 'CREATIVITY_RATING') { 
         return {
             ...state,
             creativity: action.payload,
-            overall_rating: Number(state.overall_rating) + Number(action.payload)
         }
-    } else if (action.type === 'COLLABORATION_RATING'){
+    } else if (action.type === 'CLARITY_RATING'){
        return {
             ...state,
-            nutrition: action.payload,
-            overall_rating: Number(state.overall_rating) + Number(action.payload)
+            clarity: action.payload,
         }
-    } else if (action.type === 'NEW_COMMENT'){
+    } else if (action.type === 'OVERALL_RATING'){
         return {
             ...state,
-            comments: action.payload,
+            overall: action.payload,
         }
     }   else if (action.type === 'CLEAR_RATING'){
         return blankFeedback;
     }
     return state; 
 }
-const mealFeedbackHistory = (state = [], action ) => {
+const feedbackHistory = (state = [], action ) => {
     if (action.type === 'SET_HISTORY'){
        return action.payload;
     }
@@ -75,6 +80,6 @@ const home = (state = true, action) => {
 }
 export default combineReducers({
     feedback,  
-    mealFeedbackHistory, 
+    feedbackHistory, 
     home
 }); 

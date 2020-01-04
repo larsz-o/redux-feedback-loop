@@ -2,11 +2,10 @@ import React, { Component } from 'react';
 import './App.css';
 import HomeView from '../HomeView/HomeView.js';
 import LessonView from '../LessonView/LessonView.js'; 
-import FirstView from '../FirstReview/FirstReview.js';
-import TextureView from '../TextureView/TextureView.js';
-import CreativityView from '../CreativityView/CreativityView.js'; 
-import NutritionView from '../NutritionView/NutritionView.js';
-import CommentsView from '../CommentsView/CommentsView.js'; 
+import PositiveView from '../FirstReview/FirstReview.js';
+import CriticalView from '../CriticalView/CriticalView.js';
+import QuestionsView from '../QuestionsView/QuestionsView'; 
+import RatingsView from '../RatingsView/RatingsView';
 import SubmissionCompleteView from '../SubmissionCompleteView/SubmissionCompleteView';
 import ResultsView from '../ResultsView/ResultsView.js'; 
 import {HashRouter as Router, Route} from "react-router-dom";
@@ -14,7 +13,7 @@ import {HashRouter as Router, Route} from "react-router-dom";
 
 
 class App extends Component {
-
+// to do: update server and database!
   render() {
     return (
       <Router >
@@ -22,12 +21,11 @@ class App extends Component {
           {/* client-side routers */}
           <Route exact path="/" component={HomeView}/>
           <Route path="/lesson" component={LessonView}/>
-          <Route path="/first-impressions" component={FirstView}/>
-          <Route path="/texture" component={TextureView}/>
-          <Route path="/creativity" component={CreativityView}/>
-          <Route path="/nutrition" component={NutritionView}/>
-          <Route path="/comments" component={CommentsView}/>
-          <Route path="/submission" component={SubmissionCompleteView}/>
+          <Route path="/positive" component={PositiveView}/>
+          <Route path="/critical" component={CriticalView}/>
+          <Route path="/questions" component={QuestionsView}/>
+          <Route path="/ratings" component={RatingsView}/>
+          <Route path="/review" component={SubmissionCompleteView}/>
           <Route path="/results" component={ResultsView}/>
       </div>
        </Router>

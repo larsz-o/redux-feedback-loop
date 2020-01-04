@@ -23,7 +23,7 @@ class LessonView extends Component {
         this.props.history.push('/');
     }
    next = () => {
-        this.props.history.push('/first-impressions'); 
+        this.props.history.push('/positive'); 
     } 
 
     render(){

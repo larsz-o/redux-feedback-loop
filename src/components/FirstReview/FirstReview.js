@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Button, Dialog, Input} from '@material-ui/core';
+import { Button, Dialog } from '@material-ui/core';
 import Header from '../Header/Header';
 
 class TasteView extends Component {
@@ -11,7 +11,6 @@ class TasteView extends Component {
             open: false,
             image: '',
             selected: '', 
-            positive: [],
             input1: '1. What really impressed me was',
             input2: '2. This sketch shows',
             input3: '3. The strongest aspect of this design is'
@@ -31,6 +30,13 @@ class TasteView extends Component {
             [property]: event.target.value,
         });
     }
+    navTo = () => {
+        if (this.props.reduxStore.feedback.positive.length === 3 && this.props.reduxStore.feedback.lesson.length > 1) {
+            this.props.history.push('/critical');
+        } else {
+            alert('Please choose a design and submit three positive comments.');
+        }
+    }
     navigateBack = () => {
         this.props.history.push('/lesson');
     }
@@ -44,18 +50,14 @@ class TasteView extends Component {
     sendValueToRedux = () => {
         const action = { type: 'SUBMIT_POSITIVE', payload: [this.state.input1, this.state.input2, this.state.input3] };
         this.props.dispatch(action);
-        if(this.props.reduxStore.feedback.positive.length !== 3){
-            this.props.history.push('/');
-        } else {
-            alert('Please submit three positive comments.');
-        }
-       
+        this.navTo();
+        
     }
 
     render() {
         return (
             <div className="main">
-                <Header />
+                <Header className={this.props.reduxStore.home}/>
                 <div className="flex-box flex-evenly form-zone animate-pop-in">
                     <div className="column-4">
                         <h2>First impressions</h2>
