@@ -1,16 +1,11 @@
 import {combineReducers} from 'redux'; 
 
 let blankFeedback = {
-    taste: 0, 
-    texture: 0,
-    creativity: 0, 
-    nutrition: 0, 
-    comments: '', 
-    flagged: false, 
-    date: '',
-    meal: '', 
-    overall_rating: 0, 
     name: '', 
+    lesson: '',
+    questions: [],
+    overall_rating: 0, 
+    
 };
 const feedback = (state = blankFeedback, action ) => {
     if(action.type === 'ADD_NAME'){
@@ -18,10 +13,16 @@ const feedback = (state = blankFeedback, action ) => {
             ...state, 
             name: action.payload
         };
-    } else if(action.type === 'ADD_LESSON'){
+    } else if(action.type === 'CHOOSE_LESSON'){
         return {
              ...state,
-             meal: action.payload,
+             lesson: action.payload,
+         };
+        }
+         else if (action.type === 'SUBMIT_QUESTIONS'){
+            return {
+                ...state, 
+                questions: [...state.questions, action.payload],
          }
      } else if (action.type  === 'DIFFICULTY_RATING'){
       return  {

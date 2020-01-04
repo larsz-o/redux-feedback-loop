@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import HomeView from '../HomeView/HomeView.js';
 import LessonView from '../LessonView/LessonView.js'; 
-import DescribeView from '../TasteView/TasteView.js';
+import FirstView from '../FirstReview/FirstReview.js';
 import TextureView from '../TextureView/TextureView.js';
 import CreativityView from '../CreativityView/CreativityView.js'; 
 import NutritionView from '../NutritionView/NutritionView.js';
@@ -22,7 +22,7 @@ class App extends Component {
           {/* client-side routers */}
           <Route exact path="/" component={HomeView}/>
           <Route path="/lesson" component={LessonView}/>
-          <Route path="/describe" component={DescribeView}/>
+          <Route path="/first-impressions" component={FirstView}/>
           <Route path="/texture" component={TextureView}/>
           <Route path="/creativity" component={CreativityView}/>
           <Route path="/nutrition" component={NutritionView}/>

@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux'; 
 import {Button, Dialog } from '@material-ui/core'; 
 import Header from '../Header/Header';
-class MealView extends Component {
+class LessonView extends Component {
     constructor(){
         super(); 
     this.state = {
@@ -23,7 +23,7 @@ class MealView extends Component {
         this.props.history.push('/');
     }
    next = () => {
-        this.props.history.push('/describe'); 
+        this.props.history.push('/first-impressions'); 
     } 
 
     render(){
@@ -34,7 +34,7 @@ class MealView extends Component {
           <div className="flex-box flex-evenly form-zone animate-pop-in">
                     <div className="column-4">
                         <h2>Design Sketches</h2>
-                        <p>Read through the prompt for the Design Sketches assignment, then review the student work examples below. You will be able to look at the examples when I ask you questions about them in the next steps.</p>
+                        <p>Read through the prompt for the Design Sketches assignment, then review the student work examples below. You will be able to look at the examples when I ask you questions about them in the next steps. When you are done reviewing the prompt, navigate to the next page.</p>
                         <div className="flex-box flex-evenly">
                         {this.state.examples.map((ex, i) => {
                             return(
@@ -71,4 +71,4 @@ class MealView extends Component {
 const mapReduxStoreToProps = (reduxStore) => ({
     reduxStore
 });
-export default connect(mapReduxStoreToProps)(MealView); 
+export default connect(mapReduxStoreToProps)(LessonView); 
