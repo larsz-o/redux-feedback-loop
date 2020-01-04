@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Button, Dialog } from '@material-ui/core';
+import { Button, Dialog, Input} from '@material-ui/core';
 import Header from '../Header/Header';
 
 class TasteView extends Component {
@@ -11,7 +11,10 @@ class TasteView extends Component {
             open: false,
             image: '',
             selected: '', 
-            questions: []
+            positive: [],
+            input1: '1. What really impressed me was',
+            input2: '2. This sketch shows',
+            input3: '3. The strongest aspect of this design is'
             
         }
     }
@@ -22,9 +25,10 @@ class TasteView extends Component {
             image: ''
         })
     }
-    handleRangeChange = (event) => {
+    handleChangeFor = (event, property) => {
         this.setState({
-            taste: event.target.value,
+            ...this.state,
+            [property]: event.target.value,
         });
     }
     navigateBack = () => {
@@ -38,12 +42,12 @@ class TasteView extends Component {
         })
     }
     sendValueToRedux = () => {
-        const action = { type: 'SUBMIT_QUESTIONS', payload: this.state.questions };
+        const action = { type: 'SUBMIT_POSITIVE', payload: [this.state.input1, this.state.input2, this.state.input3] };
         this.props.dispatch(action);
-        if(this.props.reduxStore.feedback.lesson.length !== 0){
+        if(this.props.reduxStore.feedback.positive.length !== 3){
             this.props.history.push('/');
         } else {
-            alert('Please choose a lesson.');
+            alert('Please submit three positive comments.');
         }
        
     }
@@ -55,7 +59,6 @@ class TasteView extends Component {
                 <div className="flex-box flex-evenly form-zone animate-pop-in">
                     <div className="column-4">
                         <h2>First impressions</h2>
-                        <p> It is important to be constructive and ask clarifying questions of the designer. A critique should be beneficial to the designer so they can improve their work. </p>
                         <p>Choose one design sketch to focus on for the duration of this activity.</p>
                         <div className="flex-box flex-evenly">
                         {this.state.examples.map((ex, i) => {
@@ -76,26 +79,22 @@ class TasteView extends Component {
 
                     </div>
                         <div className="instructions column-6  text-left">
-                            <h4>Assignment Prompt</h4>
-                            <p></p>
+                            <h4>Describe what you like about this design</h4>
+                            <p>It is easy to jump right into critical comments when critiquing your peers' work, but it helps the designer who is being critiqued and you - the critiquer - to start with some positive feedback.</p>
+                            <p>In the input fields below, name three things that are working well in your chosen design sketch. To help get you going, I've created a few sentence starters for you. Feel free to use them or start from scratch.</p>
+                            <div className="flex-col column-12">
+                            <input value={this.state.input1} onChange={(event)=>this.handleChangeFor(event, 'input1')} required/>
+                            <input value={this.state.input2} onChange={(event)=>this.handleChangeFor(event, 'input2')} required/>
+                            <input value={this.state.input3} onChange={(event)=>this.handleChangeFor(event, 'input3')} required/>
+                            </div>
+                            <div className="flex-box flex-center margin-top-15">
+                            <Button variant="contained" color="secondary" onClick={()=>this.sendValueToRedux()}>Submit</Button>
+                            </div>
+                            
+                           
                         </div>
                     </div>
             
-                <div className="flex-box flex-center">
-
-                    <h2> <span className="emphasis-word">difficult </span>did you find {this.props.reduxStore.feedback.lesson} to be?</h2>
-                    <div className="instructions">
-
-                    </div>
-                    <form>
-                        <label>Terrible</label> <input value={this.state.taste} onChange={this.handleRangeChange} className="slider" type="range" min="0" max="10" required /><label> Amazing</label>
-                    </form><br />
-                    <h2>Rating: {this.state.taste}</h2> <br />
-
-                    <Button variant="contained" onClick={this.navigateBack}>Back</Button>
-
-                    <Button variant="contained" color="secondary" onClick={this.sendValueToRedux}>Next</Button>
-                </div>
 
             </div>
         );

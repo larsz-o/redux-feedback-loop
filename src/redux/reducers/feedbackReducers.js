@@ -3,6 +3,8 @@ import {combineReducers} from 'redux';
 let blankFeedback = {
     name: '', 
     lesson: '',
+    positive: [],
+    negative: [],
     questions: [],
     overall_rating: 0, 
     
@@ -19,10 +21,10 @@ const feedback = (state = blankFeedback, action ) => {
              lesson: action.payload,
          };
         }
-         else if (action.type === 'SUBMIT_QUESTIONS'){
+         else if (action.type === 'SUBMIT_POSITIVE'){
             return {
                 ...state, 
-                questions: [...state.questions, action.payload],
+                questions: action.payload,
          }
      } else if (action.type  === 'DIFFICULTY_RATING'){
       return  {
