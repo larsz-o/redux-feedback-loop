@@ -33,7 +33,7 @@ class LessonView extends Component {
             <div className="main">
                 <Header className={this.props.reduxStore.home} />
                 <div className="flex-box flex-evenly form-zone animate-pop-in">
-                    <div className="column-6">
+                    <div className="column-6 column-md-6">
                         <h2>Design Sketches Assignment Prompt</h2>
                         <p>Read through the prompt for the Design Sketches assignment. 
                             When you are done reviewing the prompt, click to view the design examples (the work product for this prompt).</p>
@@ -48,7 +48,7 @@ class LessonView extends Component {
                         </div>
                     </div>
                
-                {this.state.viewDesigns && <div className="flex-box flex-evenly column-4">
+                {this.state.viewDesigns && <div className="flex-box flex-evenly column-4 column-md-8">
                 <div><h2>Design Sketches</h2>
                 <p>Click each thumbnail to view the design sketch in detail. When you are done reviewing, navigate to the next page.</p></div>
                     {this.state.examples.map((ex, i) => {
@@ -63,7 +63,7 @@ class LessonView extends Component {
                     <div className="dialog">
                         <div className="flex-box flex-end close-icon" onClick={this.handleClose}>x</div>
                         {this.state.videoShow ? (<div><h3>Walk-Through Demo</h3>
-                     <iframe width="560" height="315" src="https://www.youtube.com/embed/HIj8SOE-jGo" frameBorder="0" title="walkthrough" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" ></iframe>
+                     <iframe width="100%" height="315" src="https://www.youtube.com/embed/HIj8SOE-jGo" frameBorder="0" title="walkthrough" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" ></iframe>
         <p className="plain-link" onClick={()=>this.setState({...this.state, videoShow: false})}>Switch to photo view</p></div>):(<div><h3>Example photo</h3><img className="full-img" src={require(`./${this.state.image.image}`)} alt="demo"/><p className="plain-link" onClick={()=>this.setState({...this.state, videoShow: true})}>Switch to video view</p></div>)}
                     </div>
                      </Dialog>

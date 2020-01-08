@@ -47,10 +47,10 @@ class NegativeView extends Component {
             <div className="main">
                 <Header className={this.props.reduxStore.home}/>
                 <div className="flex-box flex-evenly form-zone animate-pop-in">
-                    <div className="column-4">
+                    <div className="column-4 column-md-6">
                         <h2>Your Design Sketch</h2>
                         <div className="flex-box flex-evenly">
-                        <div className="thumbnail column-6">
+                        <div className="thumbnail column-6 column-md-10">
                             <img onClick={()=>this.setState({...this.state, open: true, image: this.props.reduxStore.feedback.lesson})} src={require(`../LessonView/${this.props.reduxStore.feedback.lesson.image}`)} alt="your lesson"/>
                         </div>
                         </div>
@@ -58,13 +58,13 @@ class NegativeView extends Component {
                             <div className="dialog">
                                 <div className="flex-box flex-end close-icon" onClick={this.handleClose}>x</div>
                                 {this.state.videoShow ? (<div><h3>Walk-Through Demo</h3>
-                                    <iframe width="560" height="315" src={this.state.image.video} frameBorder="0" title="walkthrough" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" ></iframe>
+                                    <iframe width="100%" height="315" src={this.state.image.video} frameBorder="0" title="walkthrough" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" ></iframe>
                                     <p className="plain-link" onClick={() => this.setState({ ...this.state, videoShow: false })}>Switch to photo view</p></div>) : (<div><h3>Example photo</h3><img className="full-img" src={require(`../LessonView/${this.state.image.image}`)} alt="demo" /><p className="plain-link" onClick={() => this.setState({ ...this.state, videoShow: true })}>Switch to video view</p></div>)}
                             </div>
                         </Dialog>
 
                     </div>
-                        <div className="instructions column-6  text-left">
+                        <div className="instructions column-6 column-md-10 text-left">
                             <h4>Describe what you would improve about this design</h4>
                             <p>Now that you've given some positive feedback, it's time to share your critical comments. Remember: critique is intended to improve your peers' projects and it is a integral part of the design process. Focus on providing some feedback that will help move this project to the next level.</p>
                             <p>In the input fields below, name three things that are not working well in your chosen design sketch. To help get you going, I've created a few sentence starters for you. Feel free to use them or start from scratch.</p>

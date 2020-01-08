@@ -55,7 +55,7 @@ class TasteView extends Component {
             <div className="main">
                 <Header className={this.props.reduxStore.home} />
                 <div className="flex-box flex-evenly form-zone animate-pop-in">
-                    <div className="column-4">
+                    <div className="column-4 column-md-8">
                         <h2>First impressions</h2>
                         <p>Click on the thumbnail for each project to watch a student walk through their design. You will be doing a similar walk-through in your assignment later this week.</p>
                         <p>Then, select one of the two projects to provide feedback on for the duration of this activity.</p>
@@ -73,13 +73,13 @@ class TasteView extends Component {
                             <div className="dialog">
                                 <div className="flex-box flex-end close-icon" onClick={this.handleClose}>x</div>
                                 {this.state.videoShow ? (<div><h3>Walk-Through Demo</h3>
-                                    <iframe width="560" height="315" src={this.state.image.video} frameBorder="0" title="walkthrough" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" ></iframe>
+                                    <iframe width="100%" height="315" src={this.state.image.video} frameBorder="0" title="walkthrough" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" ></iframe>
                                     <p className="plain-link" onClick={() => this.setState({ ...this.state, videoShow: false })}>Switch to photo view</p></div>) : (<div><h3>Example photo</h3><img className="full-img" src={require(`../LessonView/${this.state.image.image}`)} alt="demo" /><p className="plain-link" onClick={() => this.setState({ ...this.state, videoShow: true })}>Switch to video view</p></div>)}
                             </div>
                         </Dialog>
 
                     </div>
-                    {this.state.selected.image.length !== 0 && <div className="instructions column-6  text-left">
+                    {this.state.selected.image.length !== 0 && <div className="instructions column-6 column-md-10 text-left">
                         <h4>Describe what you like about this design</h4>
                         <p>It is easy to jump right into critical comments when critiquing your peers' work, but it helps the designer who is being critiqued and you - the critiquer - to start with some positive feedback.</p>
                         <p>In the input fields below, name three things that are working well in your chosen design sketch. To help get you going, I've created a few sentence starters for you. Feel free to use them or start from scratch.</p>

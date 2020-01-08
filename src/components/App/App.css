@@ -72,12 +72,12 @@ a:link {
 }
 .form-zone {
   margin-top: 10vh;
-  padding: 10vh;
 }
 .image-icon{
   height: 25px;
   margin-left: 50px;
 }
+
 h4 {
   font-weight: 300;
 }
@@ -150,7 +150,6 @@ h2 {
   color: beige; 
   font-size: 3.5em; 
   text-shadow: 3px 3px #ff0000;
-  margin-top: 25vh;
 }
 html, body {
   margin: 0;

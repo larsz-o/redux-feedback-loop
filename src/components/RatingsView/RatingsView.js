@@ -53,7 +53,7 @@ class RatingsView extends Component {
                     <div className="column-4">
                         <h2>Your Design Sketch</h2>
                         <div className="flex-box flex-evenly">
-                        <div className="thumbnail column-6">
+                        <div className="thumbnail column-6 column-md-10">
                             <img onClick={()=>this.setState({...this.state, open: true, image: this.props.reduxStore.feedback.lesson})} src={require(`../LessonView/${this.props.reduxStore.feedback.lesson.image}`)} alt="your lesson"/>
                         </div>
                         </div>
@@ -61,12 +61,12 @@ class RatingsView extends Component {
                             <div className="dialog">
                                 <div className="flex-box flex-end close-icon" onClick={this.handleClose}>x</div>
                                 {this.state.videoShow ? (<div><h3>Walk-Through Demo</h3>
-                                    <iframe width="560" height="315" src={this.state.image.video} frameBorder="0" title="walkthrough" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" ></iframe>
+                                    <iframe width="100%" height="315" src={this.state.image.video} frameBorder="0" title="walkthrough" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" ></iframe>
                                     <p className="plain-link" onClick={() => this.setState({ ...this.state, videoShow: false })}>Switch to photo view</p></div>) : (<div><h3>Example photo</h3><img className="full-img" src={require(`../LessonView/${this.props.reduxStore.feedback.lesson.image}`)} alt="demo" /><p className="plain-link" onClick={() => this.setState({ ...this.state, videoShow: true })}>Switch to video view</p></div>)}
                             </div>
                         </Dialog>
                     </div>
-                        <div className="instructions column-6  text-left">
+                        <div className="instructions column-6 column-md-10 text-left">
                             <h4>Rate your design</h4>
                             <p>Finally, we are going to rank our peers' designs using quantitative values. Don't let the numbers intimidate you. These scales will help designers understand close they are to meeting the mark and which areas need the most improvement.</p>
                             <p>Please rank your design for each category listed below on a scale from 0 (worst)  - 10 (best).</p>
