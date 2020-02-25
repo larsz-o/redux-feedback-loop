@@ -17,6 +17,9 @@ const theme = createMuiTheme({
             main: '#0EB3AA', 
             dark: '#FFFFFF',
             contrastText: 'rgb(0,0,0)'
+          }, 
+          secondary: {
+              main: '#003478'
           }
       }
 }) // Material UI theme setting 
