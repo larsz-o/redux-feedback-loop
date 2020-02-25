@@ -60,7 +60,7 @@ class QuestionsView extends Component {
                             <div className="dialog">
                                 <div className="flex-box flex-end close-icon" onClick={this.handleClose}>x</div>
                                 {this.state.videoShow ? (<div><h3>Walk-Through Demo</h3>
-                                    <iframe width="100%" height="315" src={this.state.image.video} frameBorder="0" title="walkthrough" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" ></iframe>
+                                    <iframe max-width="100%" src={this.state.image.video} frameBorder="0" title="walkthrough" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
                                     <p className="plain-link" onClick={() => this.setState({ ...this.state, videoShow: false })}>Switch to photo view</p></div>) : (<div><h3>Example photo</h3><img className="full-img" src={require(`../LessonView/${this.state.image.image}`)} alt="demo" /><p className="plain-link" onClick={() => this.setState({ ...this.state, videoShow: true })}>Switch to video view</p></div>)}
                             </div>
                         </Dialog>

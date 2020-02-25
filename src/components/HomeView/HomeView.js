@@ -29,7 +29,7 @@ class HomeView extends Component {
         return (
             <div className="main">
                 <Header className={this.props.home} />
-                <div className="flex-box flex-evenly form-zone">
+                {!this.props.home && <div className="flex-box flex-evenly form-zone">
                     <div className="center">
                         <h2>Instructions</h2>
                     </div>
@@ -53,7 +53,7 @@ class HomeView extends Component {
                         </div>
 
                     </div>
-                </div>
+                </div>}
 
             </div>
 

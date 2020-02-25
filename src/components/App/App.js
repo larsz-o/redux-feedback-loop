@@ -7,7 +7,6 @@ import CriticalView from '../CriticalView/CriticalView.js';
 import QuestionsView from '../QuestionsView/QuestionsView'; 
 import RatingsView from '../RatingsView/RatingsView';
 import SubmissionCompleteView from '../SubmissionCompleteView/SubmissionCompleteView';
-import ResultsView from '../ResultsView/ResultsView.js'; 
 import {HashRouter as Router, Route} from "react-router-dom";
 
 
@@ -26,7 +25,6 @@ class App extends Component {
           <Route path="/questions" component={QuestionsView}/>
           <Route path="/ratings" component={RatingsView}/>
           <Route path="/review" component={SubmissionCompleteView}/>
-          <Route path="/results" component={ResultsView}/>
       </div>
        </Router>
     );
